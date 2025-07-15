@@ -1,32 +1,31 @@
-/* Fonts */
+/* Variables and Defaults */
 :root {
-  --default-font: "Open Sans",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Jost",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  /* Fonts */
+  --default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Jost", sans-serif;
+  --nav-font: "Poppins", sans-serif;
+
+  /* Global Colors */
+  --background-color: #ffffff;
+  --default-color: #444444;
+  --heading-color: #37517e;
+  --accent-color: #47b2e4;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
+
+  /* Nav Menu Colors */
+  --nav-color: #ffffff;
+  --nav-hover-color: #47b2e4;
+  --nav-mobile-background-color: #ffffff;
+  --nav-dropdown-background-color: #ffffff;
+  --nav-dropdown-color: #444444;
+  --nav-dropdown-hover-color: #47b2e4;
+
+  /* Scroll Behavior */
+  scroll-behavior: smooth;
 }
 
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #37517e; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #47b2e4; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-}
-
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
-:root {
-  --nav-color: #ffffff;  /* The default color of the main navmenu links */
-  --nav-hover-color: #47b2e4; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #47b2e4; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
-}
-
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
-
+/* Color Presets */
 .light-background {
   --background-color: #f5f6f8;
   --surface-color: #ffffff;
@@ -40,14 +39,7 @@
   --contrast-color: #ffffff;
 }
 
-/* Smooth scroll */
-:root {
-  scroll-behavior: smooth;
-}
-
-/*--------------------------------------------------------------
-# General Styling & Shared Classes
---------------------------------------------------------------*/
+/* General Styling */
 body {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -57,21 +49,19 @@ body {
 a {
   color: var(--accent-color);
   text-decoration: none;
-  transition: 0.3s;
+  transition: color 0.3s;
 }
 
 a:hover {
   color: color-mix(in srgb, var(--accent-color), transparent 25%);
-  text-decoration: none;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
 }
-/*--------------------------------------------------------------
-# Global Header
---------------------------------------------------------------*/
+
+/* Header */
 .header {
   --background-color: #3d4d6a;
   --heading-color: #ffffff;
@@ -80,6 +70,7 @@ h1,h2,h3,h4,h5,h6 {
   padding: 15px 0;
   transition: all 0.5s;
   z-index: 997;
+  animation: fadeSlideDown 1s ease-in-out;
 }
 
 .header .logo {
@@ -97,7 +88,7 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: 500;
   color: var(--heading-color);
   letter-spacing: 2px;
-  /* text-transform:uppercase; */
+  /* text-transform: uppercase; */
 }
 
 .header .btn-getstarted,
@@ -106,17 +97,17 @@ h1,h2,h3,h4,h5,h6 {
   background: var(--accent-color);
   font-size: 14px;
   padding: 8px 25px;
-  margin: 0 0 0 30px;
+  margin-left: 30px;
   border-radius: 50px;
   transition: 0.3s;
 }
 
 .header .btn-getstarted:hover,
 .header .btn-getstarted:focus:hover {
-  color: var(--contrast-color);
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
-/*end animated word*/
+
+/* Responsive */
 @media (max-width: 1200px) {
   .header .logo {
     order: 1;
@@ -124,7 +115,7 @@ h1,h2,h3,h4,h5,h6 {
 
   .header .btn-getstarted {
     order: 2;
-    margin: 0 15px 0 0;
+    margin-right: 15px;
     padding: 6px 15px;
   }
 
@@ -133,20 +124,18 @@ h1,h2,h3,h4,h5,h6 {
   }
 }
 
-/* Index Page Header*/
+/* Index Page Header */
 .index-page .header {
   --background-color: rgba(255, 255, 255, 0);
   --heading-color: #ffffff;
   --nav-color: #ffffff;
 }
 
-/* Index Page Header on Scroll*/
 .index-page.scrolled .header {
   --background-color: rgba(40, 58, 90, 0.9);
 }
-/* add some edits to header  */
 
-/* Animation for header appearance */
+/* Animations */
 @keyframes fadeSlideDown {
   0% {
     opacity: 0;
@@ -167,33 +156,6 @@ h1,h2,h3,h4,h5,h6 {
   }
 }
 
-.header {
-  animation: fadeSlideDown 1s ease-in-out;
-}
-
-/* Nav Links Hover Animation */
-.navmenu ul li a {
-  position: relative;
-  display: inline-block;
-  transition: color 0.3s ease;
-}
-
-.navmenu ul li a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  left: 0;
-  bottom: -4px;
-  background-color: var(--heading-color);
-  transition: width 0.3s ease-in-out;
-}
-
-.navmenu ul li a:hover::after {
-  width: 100%;
-}
-
-/* Get Started Button Hover Pulse */
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -209,11 +171,41 @@ h1,h2,h3,h4,h5,h6 {
 .header .btn-getstarted:hover {
   animation: pulse 0.5s ease-in-out;
 }
-/*  end some edits to header */
 
-/*--------------------------------------------------------------
-# Navigation Menu
---------------------------------------------------------------*/
+/* Nav Menu Hover Line */
+.navmenu ul li a {
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.navmenu ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: var(--heading-color);
+  transition: width 0.3s ease-in-out;
+}
+
+.navmenu ul li a:hover::after {
+  width: 100%;
+}
+
+/*-------------------------------
+# Navigation Menu (Optimized)
+--------------------------------*/
+
+/* Common transitions for nav links */
+.navmenu a,
+.navmenu a:focus,
+.navmenu a i,
+.navmenu a:focus i {
+  transition: color 0.3s, background-color 0.3s, transform 0.3s;
+}
+
 /* Desktop Navigation */
 @media (min-width: 1200px) {
   .navmenu {
@@ -221,151 +213,103 @@ h1,h2,h3,h4,h5,h6 {
   }
 
   .navmenu ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    list-style: none;
-    align-items: center;
   }
 
   .navmenu li {
     position: relative;
   }
 
-  .navmenu a,
-  .navmenu a:focus {
+  .navmenu a {
     color: var(--nav-color);
     padding: 18px 15px;
-    font-size: 15px;
-    font-family: var(--nav-font);
-    font-weight: 400;
+    font: 400 15px var(--nav-font);
     display: flex;
     align-items: center;
     justify-content: space-between;
     white-space: nowrap;
-    transition: 0.3s;
   }
 
-  .navmenu a i,
-  .navmenu a:focus i {
+  .navmenu a i {
     font-size: 12px;
-    line-height: 0;
     margin-left: 5px;
-    transition: 0.3s;
+    line-height: 0;
   }
 
   .navmenu li:last-child a {
     padding-right: 0;
   }
 
-  .navmenu li:hover>a,
+  .navmenu li:hover > a,
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-hover-color);
   }
 
-  .navmenu .dropdown ul {
-    margin: 0;
-    padding: 10px 0;
+  /* Dropdown styles */
+  .navmenu .dropdown ul,
+  .navmenu .megamenu ul {
     background: var(--nav-dropdown-background-color);
-    display: block;
     position: absolute;
-    visibility: hidden;
-    left: 14px;
-    top: 130%;
+    padding: 10px 0;
     opacity: 0;
+    visibility: hidden;
     transition: 0.3s;
     border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     z-index: 99;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
   }
 
-  .navmenu .dropdown ul li {
+  .navmenu .dropdown ul {
+    top: 130%;
+    left: 14px;
+  }
+
+  .navmenu .megamenu ul {
+    top: 130%;
+    left: 0;
+    right: 0;
+    display: flex;
+  }
+
+  .navmenu .dropdown:hover > ul,
+  .navmenu .megamenu:hover > ul {
+    top: 100%;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navmenu .dropdown ul li,
+  .navmenu .megamenu ul li {
     min-width: 200px;
+    flex: 1;
   }
 
-  .navmenu .dropdown ul a {
+  .navmenu .dropdown ul a,
+  .navmenu .megamenu ul a {
     padding: 10px 20px;
     font-size: 15px;
-    text-transform: none;
     color: var(--nav-dropdown-color);
   }
 
-  .navmenu .dropdown ul a i {
-    font-size: 12px;
-  }
-
   .navmenu .dropdown ul a:hover,
-  .navmenu .dropdown ul .active:hover,
-  .navmenu .dropdown ul li:hover>a {
+  .navmenu .megamenu ul a:hover,
+  .navmenu .megamenu ul .active {
     color: var(--nav-dropdown-hover-color);
-  }
-
-  .navmenu .dropdown:hover>ul {
-    opacity: 1;
-    top: 100%;
-    visibility: visible;
   }
 
   .navmenu .dropdown .dropdown ul {
     top: 0;
-    left: -90%;
-    visibility: hidden;
-  }
-
-  .navmenu .dropdown .dropdown:hover>ul {
-    opacity: 1;
-    top: 0;
     left: -100%;
-    visibility: visible;
   }
 
-  .navmenu .megamenu {
-    position: static;
-  }
-
-  .navmenu .megamenu ul {
-    margin: 0;
-    padding: 10px;
-    background: var(--nav-dropdown-background-color);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 130%;
-    left: 0;
-    right: 0;
-    visibility: hidden;
-    opacity: 0;
-    display: flex;
-    transition: 0.3s;
-    border-radius: 4px;
-    z-index: 99;
-  }
-
-  .navmenu .megamenu ul li {
-    flex: 1;
-  }
-
-  .navmenu .megamenu ul li a,
-  .navmenu .megamenu ul li:hover>a {
-    padding: 10px 20px;
-    font-size: 15px;
-    color: var(--nav-dropdown-color);
-  }
-
-  .navmenu .megamenu ul li a:hover,
-  .navmenu .megamenu ul li .active,
-  .navmenu .megamenu ul li .active:hover {
-    color: var(--nav-dropdown-hover-color);
-  }
-
-  .navmenu .megamenu:hover>ul {
+  .navmenu .dropdown .dropdown:hover > ul {
     opacity: 1;
-    top: 100%;
     visibility: visible;
-  }
-
-  .navmenu .dd-box-shadow {
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -374,7 +318,6 @@ h1,h2,h3,h4,h5,h6 {
   .mobile-nav-toggle {
     color: var(--nav-color);
     font-size: 28px;
-    line-height: 0;
     margin-right: 10px;
     cursor: pointer;
     transition: color 0.3s;
@@ -387,86 +330,65 @@ h1,h2,h3,h4,h5,h6 {
 
   .navmenu ul {
     display: none;
-    list-style: none;
     position: absolute;
     inset: 60px 20px 20px 20px;
     padding: 10px 0;
     margin: 0;
     border-radius: 6px;
-    background-color: var(--nav-mobile-background-color);
+    background: var(--nav-mobile-background-color);
     overflow-y: auto;
-    transition: 0.3s;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     z-index: 9998;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
   }
 
-  .navmenu a,
-  .navmenu a:focus {
+  .navmenu a {
     color: var(--nav-dropdown-color);
     padding: 10px 20px;
-    font-family: var(--nav-font);
-    font-size: 17px;
-    font-weight: 500;
+    font: 500 17px var(--nav-font);
     display: flex;
     align-items: center;
     justify-content: space-between;
     white-space: nowrap;
-    transition: 0.3s;
   }
 
-  .navmenu a i,
-  .navmenu a:focus i {
+  .navmenu a i {
     font-size: 12px;
-    line-height: 0;
     margin-left: 5px;
     width: 30px;
     height: 30px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--accent-color), transparent 90%);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    transition: 0.3s;
-    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-  }
-
-  .navmenu a i:hover,
-  .navmenu a:focus i:hover {
-    background-color: var(--accent-color);
-    color: var(--contrast-color);
   }
 
   .navmenu a:hover,
-  .navmenu .active,
-  .navmenu .active:focus {
+  .navmenu .active {
     color: var(--nav-dropdown-hover-color);
   }
 
-  .navmenu .active i,
-  .navmenu .active:focus i {
-    background-color: var(--accent-color);
+  .navmenu .active i {
+    background: var(--accent-color);
     color: var(--contrast-color);
     transform: rotate(180deg);
   }
 
   .navmenu .dropdown ul {
-    position: static;
     display: none;
-    z-index: 99;
-    padding: 10px 0;
     margin: 10px 20px;
-    background-color: var(--nav-dropdown-background-color);
-    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-    box-shadow: none;
-    transition: all 0.5s ease-in-out;
+    background: var(--nav-dropdown-background-color);
+    padding: 10px 0;
+    border: 1px solid rgba(68, 68, 68, 0.1);
   }
 
   .navmenu .dropdown ul ul {
-    background-color: rgba(33, 37, 41, 0.1);
+    background: rgba(33, 37, 41, 0.1);
   }
 
-  .navmenu .dropdown>.dropdown-active {
+  .navmenu .dropdown > .dropdown-active {
     display: block;
-    background-color: rgba(33, 37, 41, 0.03);
+    background: rgba(33, 37, 41, 0.03);
   }
 
   .mobile-nav-active {
@@ -474,37 +396,33 @@ h1,h2,h3,h4,h5,h6 {
   }
 
   .mobile-nav-active .mobile-nav-toggle {
-    color: #fff;
     position: absolute;
-    font-size: 32px;
     top: 15px;
     right: 15px;
-    margin-right: 0;
+    font-size: 32px;
+    color: #fff;
     z-index: 9999;
   }
 
   .mobile-nav-active .navmenu {
     position: fixed;
-    overflow: hidden;
     inset: 0;
     background: rgba(33, 37, 41, 0.8);
-    transition: 0.3s;
   }
 
-  .mobile-nav-active .navmenu>ul {
+  .mobile-nav-active .navmenu > ul {
     display: block;
   }
 }
 
-/*--------------------------------------------------------------
-# Global Footer
---------------------------------------------------------------*/
+/*-----------------------------
+# Footer (Optimized)
+-----------------------------*/
 .footer {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background: var(--background-color);
   font-size: 14px;
   padding-bottom: 50px;
-  position: relative;
 }
 
 .footer .footer-top {
@@ -512,15 +430,15 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .footer .social-links a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 40px;
   height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  border: 1px solid rgba(68, 68, 68, 0.5);
   font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: rgba(68, 68, 68, 0.8);
   margin-right: 10px;
   transition: 0.3s;
 }
@@ -533,7 +451,6 @@ h1,h2,h3,h4,h5,h6 {
 .footer h4 {
   font-size: 16px;
   font-weight: bold;
-  position: relative;
   padding-bottom: 12px;
 }
 
@@ -547,13 +464,6 @@ h1,h2,h3,h4,h5,h6 {
   margin: 0;
 }
 
-.footer .footer-links ul i {
-  margin-right: 3px;
-  font-size: 12px;
-  line-height: 0;
-  color: var(--accent-color);
-}
-
 .footer .footer-links ul li {
   padding: 10px 0;
   display: flex;
@@ -564,9 +474,14 @@ h1,h2,h3,h4,h5,h6 {
   padding-top: 0;
 }
 
+.footer .footer-links ul i {
+  font-size: 12px;
+  margin-right: 3px;
+  color: var(--accent-color);
+}
+
 .footer .footer-links ul a {
-  display: inline-block;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: rgba(68, 68, 68, 0.8);
   line-height: 1;
 }
 
@@ -575,11 +490,9 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .footer .footer-about a {
-  color: var(--heading-color);
-  font-size: 28px;
-  font-weight: 600;
+  font: 600 28px var(--heading-font);
   text-transform: uppercase;
-  font-family: var(--heading-font);
+  color: var(--heading-color);
 }
 
 .footer .footer-contact p {
@@ -587,89 +500,92 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .footer .copyright {
-  padding-top: 25px;
-  padding-bottom: 25px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  padding: 25px 0;
+  border-top: 1px solid rgba(68, 68, 68, 0.1);
 }
 
 .footer .copyright p {
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .footer .credits {
-  margin-top: 6px;
   font-size: 13px;
+  margin-top: 6px;
 }
 
 /*--------------------------------------------------------------
-# Preloader
+# Preloader (Optimized)
 --------------------------------------------------------------*/
 #preloader {
   position: fixed;
   inset: 0;
-  z-index: 999999;
+  z-index: 9999; /* تقليل الزائد عن الحاجة */
   overflow: hidden;
   background: var(--background-color);
-  transition: all 0.6s ease-out;
+  transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
 }
 
-#preloader:before {
+#preloader::before {
   content: "";
-  position: fixed;
-  top: calc(50% - 30px);
-  left: calc(50% - 30px);
-  border: 6px solid #ffffff;
-  border-color: var(--accent-color) transparent var(--accent-color) transparent;
-  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 60px;
   height: 60px;
-  animation: animate-preloader 1.5s linear infinite;
+  border: 6px solid transparent;
+  border-top-color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: animate-preloader 1.2s linear infinite;
 }
 
+/* تقليل مدة الأنميشن لتحسين الإحساس بالسرعة */
 @keyframes animate-preloader {
   0% {
-    transform: rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
-
   100% {
-    transform: rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
 /*--------------------------------------------------------------
-# Scroll Top Button
+# Scroll Top Button (Optimized)
 --------------------------------------------------------------*/
 
 .scroll-top {
   position: fixed;
-  visibility: hidden;
-  opacity: 0;
   right: 15px;
   bottom: -15px;
-  z-index: 99999;
-  background-color: var(--accent-color);
+  z-index: 9999; /* تقليل z-index المبالغ فيه */
   width: 44px;
   height: 44px;
-  border-radius: 50px;
-  transition: all 0.4s;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, bottom 0.4s ease;
 }
 
 .scroll-top i {
   font-size: 24px;
   color: var(--contrast-color);
-  line-height: 0;
 }
 
 .scroll-top:hover {
   background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-  color: var(--contrast-color);
 }
 
 .scroll-top.active {
-  visibility: visible;
   opacity: 1;
+  visibility: visible;
   bottom: 15px;
 }
+
 
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
@@ -681,44 +597,41 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 /*--------------------------------------------------------------
-# Global Page Titles & Breadcrumbs
+# Global Page Titles & Breadcrumbs (Optimized)
 --------------------------------------------------------------*/
+
 .page-title {
   --background-color: color-mix(in srgb, var(--default-color), transparent 96%);
-  color: var(--default-color);
   background-color: var(--background-color);
+  color: var(--default-color);
   padding: 20px 0;
   position: relative;
 }
 
 .page-title h1 {
+  margin: 0;
   font-size: 28px;
   font-weight: 700;
-  margin: 0;
 }
 
 .page-title .breadcrumbs ol {
   display: flex;
   flex-wrap: wrap;
+  gap: 0 10px; /* بدل من padding-left */
   list-style: none;
-  padding: 0 0 10px 0;
   margin: 0;
+  padding: 0 0 10px;
   font-size: 14px;
-}
-
-.page-title .breadcrumbs ol li+li {
-  padding-left: 10px;
 }
 
 .page-title .breadcrumbs ol li+li::before {
   content: "/";
-  display: inline-block;
-  padding-right: 10px;
+  margin-right: 10px;
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
 /*--------------------------------------------------------------
-# Global Sections
+# Global Sections (Optimized)
 --------------------------------------------------------------*/
 section,
 .section {
@@ -730,7 +643,6 @@ section,
 }
 
 @media (max-width: 1199px) {
-
   section,
   .section {
     scroll-margin-top: 66px;
@@ -738,7 +650,7 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Global Section Titles
+# Global Section Titles (Optimized)
 --------------------------------------------------------------*/
 .section-title {
   text-align: center;
@@ -749,141 +661,279 @@ section,
 .section-title h2 {
   font-size: 32px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin: 0 0 20px;
   padding-bottom: 20px;
   text-transform: uppercase;
   position: relative;
 }
 
-.section-title h2:before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 160px;
-  height: 1px;
-  background: color-mix(in srgb, var(--default-color), transparent 60%);
-  left: 0;
-  right: 0;
-  bottom: 1px;
-  margin: auto;
-}
-
+.section-title h2::before,
 .section-title h2::after {
   content: "";
   position: absolute;
   display: block;
-  width: 60px;
-  height: 3px;
-  background: var(--accent-color);
   left: 0;
   right: 0;
-  bottom: 0;
   margin: auto;
 }
 
-.section-title p {
-  margin-bottom: 0;
+.section-title h2::before {
+  width: 160px;
+  height: 1px;
+  bottom: 1px;
+  background: color-mix(in srgb, var(--default-color), transparent 60%);
 }
+
+.section-title h2::after {
+  width: 60px;
+  height: 3px;
+  bottom: 0;
+  background: var(--accent-color);
+}
+
+.section-title p {
+  margin: 0;
+}
+
 
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+
 .hero {
-  width: 100%;
-  min-height: 80vh;
   position: relative;
-  padding: 120px 0 60px 0;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #010c25, #0d4ba9, #094887);
+  background-size: 300% 300%;
+  animation: bgShift 15s ease infinite;
 }
 
-.hero h1 {
-  margin: 0;
-  font-size: 48px;
+/* تحسينات الخلفية المتحركة */
+.hero-bg-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.bg-particle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: float 12s infinite linear;
+  opacity: 0.8;
+}
+
+/* دوائر كبيرة بطيئة الحركة */
+.bg-particle:nth-child(1) {
+  width: 400px;
+  height: 400px;
+  top: 10%;
+  left: 5%;
+  animation-duration: 25s;
+  background: rgba(158, 207, 255, 0.1);
+}
+
+.bg-particle:nth-child(2) {
+  width: 350px;
+  height: 350px;
+  top: 70%;
+  left: 80%;
+  animation-duration: 30s;
+  animation-delay: 3s;
+  background: rgba(176, 200, 223, 0.1);
+}
+
+/* دوائر متوسطة سرعة متوسطة */
+.bg-particle:nth-child(3) {
+  width: 250px;
+  height: 250px;
+  top: 30%;
+  left: 60%;
+  animation-duration: 20s;
+  animation-delay: 2s;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.bg-particle:nth-child(4) {
+  width: 200px;
+  height: 200px;
+  top: 60%;
+  left: 20%;
+  animation-duration: 18s;
+  animation-delay: 4s;
+  background: rgba(158, 207, 255, 0.15);
+}
+
+/* دوائر صغيرة سريعة الحركة */
+.bg-particle:nth-child(5) {
+  width: 150px;
+  height: 150px;
+  top: 20%;
+  left: 40%;
+  animation-duration: 15s;
+  animation-delay: 1s;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.bg-particle:nth-child(6) {
+  width: 120px;
+  height: 120px;
+  top: 80%;
+  left: 30%;
+  animation-duration: 12s;
+  animation-delay: 2s;
+  background: rgba(176, 200, 223, 0.2);
+}
+
+.bg-particle:nth-child(7) {
+  width: 100px;
+  height: 100px;
+  top: 40%;
+  left: 70%;
+  animation-duration: 10s;
+  animation-delay: 3s;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.bg-particle:nth-child(8) {
+  width: 80px;
+  height: 80px;
+  top: 50%;
+  left: 10%;
+  animation-duration: 8s;
+  animation-delay: 1s;
+  background: rgba(158, 207, 255, 0.25);
+}
+
+/* تنسيق النص */
+.hero-text-content {
+  padding: 2rem;
+  text-align: left;
+}
+
+.hero-title {
+  font-size: 2.5rem;
   font-weight: 700;
-  line-height: 56px;
-}
-
-.hero p {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  margin: 5px 0 30px 0;
-  font-size: 22px;
+  color: #fff;
+  margin-bottom: 1.5rem;
   line-height: 1.3;
-  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  position: relative;
+  padding-bottom: 1rem;
 }
 
-.hero .btn-get-started {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  font-family: var(--heading-font);
-  font-weight: 500;
-  font-size: 15px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 10px 28px 12px 28px;
-  border-radius: 50px;
-  transition: 0.5s;
+.hero-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+  border-radius: 2px;
 }
 
-.hero .btn-get-started:hover {
-  color: var(--contrast-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+.hero-description {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 90%;
 }
 
-.hero .btn-watch-video {
-  font-size: 16px;
-  transition: 0.5s;
-  margin-left: 25px;
-  color: var(--default-color);
-  font-weight: 600;
+/* تنسيق الصورة */
+.hero-image-container {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
-.hero .btn-watch-video i {
-  color: var(--contrast-color);
-  font-size: 32px;
-  transition: 0.3s;
-  line-height: 0;
-  margin-right: 8px;
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
 }
 
-.hero .btn-watch-video:hover {
-  color: var(--accent-color);
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(13,75,169,0.3) 0%, rgba(9,72,135,0.2) 100%);
 }
 
-.hero .btn-watch-video:hover i {
-  color: color-mix(in srgb, var(--accent-color), transparent 15%);
+.hero-image-container:hover .hero-image {
+  transform: scale(1.03);
 }
 
-.hero .animated {
-  animation: up-down 2s ease-in-out infinite alternate-reverse both;
-}
-
-@media (max-width: 640px) {
-  .hero h1 {
-    font-size: 28px;
-    line-height: 36px;
+/* تأثيرات للجوال */
+@media (max-width: 992px) {
+  .hero-text-content {
+    text-align: center;
   }
-
-  .hero p {
-    font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 30px;
+  
+  .hero-title::after {
+    left: 50%;
+    transform: translateX(-50%);
   }
-
-  .hero .btn-get-started,
-  .hero .btn-watch-video {
-    font-size: 13px;
+  
+  .hero-description {
+    max-width: 100%;
+  }
+  
+  .hero-image-container {
+    margin-top: 2rem;
   }
 }
 
-@keyframes up-down {
+/* تحسين حركة الجسيمات */
+@keyframes float {
   0% {
-    transform: translateY(10px);
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 0.8;
   }
-
+  25% {
+    transform: translate(50px, -30px) rotate(90deg) scale(1.1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate(100px, 0) rotate(180deg) scale(1);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translate(50px, 30px) rotate(270deg) scale(0.9);
+    opacity: 0.7;
+  }
   100% {
-    transform: translateY(-10px);
+    transform: translate(0, 0) rotate(360deg) scale(1);
+    opacity: 0.8;
   }
+}
+
+/* تحسينات إضافية للوضوح */
+.hero {
+  background: linear-gradient(135deg, #010c25, #0d4ba9, #094887);
+  background-size: 300% 300%;
+  animation: bgShift 15s ease infinite;
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /*--------------------------------------------------------------
@@ -911,7 +961,7 @@ section,
 }
 
 /*--------------------------------------------------------------
-# About Section
+# About Section (Optimized)
 --------------------------------------------------------------*/
 .about ul {
   list-style: none;
@@ -919,9 +969,9 @@ section,
 }
 
 .about ul li {
-  padding-bottom: 5px;
   display: flex;
   align-items: center;
+  padding-bottom: 5px;
 }
 
 .about ul i {
@@ -931,25 +981,25 @@ section,
 }
 
 .about .read-more {
-  color: var(--accent-color);
-  font-family: var(--heading-font);
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 1px;
-  padding: 8px 28px;
-  border-radius: 5px;
-  transition: 0.3s;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: 8px 28px;
+  font-size: 16px;
+  font-family: var(--heading-font);
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: var(--accent-color);
   border: 2px solid var(--accent-color);
+  border-radius: 5px;
+  transition: 0.3s;
 }
 
 .about .read-more i {
   font-size: 18px;
   margin-left: 5px;
   line-height: 0;
-  transition: 0.3s;
+  transition: transform 0.3s;
 }
 
 .about .read-more:hover {
@@ -958,14 +1008,17 @@ section,
 }
 
 .about .read-more:hover i {
-  transform: translate(5px, 0);
+  transform: translateX(5px);
 }
-/*Add new edits to about us Page*/
+
+/*--------------------------------------------------------------
+# About Section Animations
+--------------------------------------------------------------*/
 .animated-text {
-  animation: fadeInUp 1.2s ease-in-out;
   font-size: 16px;
-  color: #444;
   line-height: 1.8;
+  color: #444;
+  animation: fadeInUp 1.2s ease-in-out;
 }
 
 @keyframes fadeInUp {
@@ -973,29 +1026,28 @@ section,
     opacity: 0;
     transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
+/* Card Hover Effect */
 .card-hover:hover {
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
   transform: translateY(-10px) scale(1.03) rotateZ(-0.5deg);
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-  /* cursor: url('../../assets/img/LogoCursor.cur'), auto; */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 /*--------------------------------------------------------------
-# Our Services Section
+# Our Services Section (Optimized)
 --------------------------------------------------------------*/
 .services .service-item {
   background-color: var(--surface-color);
-  box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 90px rgba(0, 0, 0, 0.1);
   padding: 50px 30px;
-  transition: all ease-in-out 0.4s;
   height: 100%;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 }
 
 .services .service-item .icon {
@@ -1003,26 +1055,26 @@ section,
 }
 
 .services .service-item .icon i {
-  color: var(--accent-color);
   font-size: 36px;
-  transition: 0.3s;
+  color: var(--accent-color);
+  transition: color 0.3s ease;
 }
 
 .services .service-item h4 {
+  font-size: 20px;
   font-weight: 700;
   margin-bottom: 15px;
-  font-size: 20px;
 }
 
 .services .service-item h4 a {
   color: var(--heading-color);
-  transition: ease-in-out 0.3s;
+  transition: color 0.3s ease;
 }
 
 .services .service-item p {
-  line-height: 24px;
   font-size: 14px;
-  margin-bottom: 0;
+  line-height: 24px;
+  margin: 0;
 }
 
 .services .service-item:hover {
@@ -1034,118 +1086,48 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Our Projects Section
+# Our Projects Section (Optimized)
 --------------------------------------------------------------*/
-.portfolio .portfolio-filters {
-  padding: 0;
-  margin: 0 auto 20px auto;
-  list-style: none;
-  text-align: center;
-}
 
-.portfolio .portfolio-filters li {
-  cursor: pointer;
-  display: inline-block;
-  padding: 8px 20px 10px 20px;
-  margin: 0;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 1;
-  margin-bottom: 5px;
-  border-radius: 50px;
-  transition: all 0.3s ease-in-out;
-  font-family: var(--heading-font);
-}
-
-.portfolio .portfolio-filters li:hover,
-.portfolio .portfolio-filters li.filter-active {
-  color: var(--contrast-color);
-  background-color: var(--accent-color);
-}
-
-.portfolio .portfolio-filters li:first-child {
-  margin-left: 0;
-}
-
-.portfolio .portfolio-filters li:last-child {
-  margin-right: 0;
-}
-
-@media (max-width: 575px) {
-  .portfolio .portfolio-filters li {
-    font-size: 14px;
-    margin: 0 0 10px 0;
-  }
-}
-
-.portfolio .portfolio-item {
+.portfolio .portfolio-img-box {
   position: relative;
   overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out;
 }
 
-.portfolio .portfolio-item .portfolio-info {
-  opacity: 0;
+.portfolio .portfolio-img-box img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+.portfolio .portfolio-img-box:hover img {
+  transform: scale(1.08);
+}
+
+.portfolio .portfolio-info {
   position: absolute;
-  left: 12px;
-  right: 12px;
   bottom: -100%;
-  z-index: 3;
-  transition: all ease-in-out 0.5s;
-  background: color-mix(in srgb, var(--background-color), transparent 10%);
-  padding: 15px;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  text-align: center;
+  transition: bottom 0.4s ease-in-out;
+  padding: 10px 15px;
 }
 
-.portfolio .portfolio-item .portfolio-info h4 {
-  font-size: 18px;
-  font-weight: 600;
-  padding-right: 50px;
-}
-
-.portfolio .portfolio-item .portfolio-info p {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  font-size: 14px;
-  margin-bottom: 0;
-  padding-right: 50px;
-}
-
-.portfolio .portfolio-item .portfolio-info .preview-link,
-.portfolio .portfolio-item .portfolio-info .details-link {
-  position: absolute;
-  right: 50px;
-  font-size: 24px;
-  top: calc(50% - 14px);
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  transition: 0.3s;
-  line-height: 0;
-}
-
-.portfolio .portfolio-item .portfolio-info .preview-link:hover,
-.portfolio .portfolio-item .portfolio-info .details-link:hover {
-  color: var(--accent-color);
-}
-
-.portfolio .portfolio-item .portfolio-info .details-link {
-  right: 14px;
-  font-size: 28px;
-}
-
-.portfolio .portfolio-item:hover .portfolio-info {
-  opacity: 1;
+.portfolio .portfolio-img-box:hover .portfolio-info {
   bottom: 0;
 }
-/*add edits on معرض الاعمال */
-.video-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.video-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.video-card video {
-  max-height: 220px;
-  object-fit: cover;
+.portfolio .portfolio-info h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--contrast-color);
 }
 
 
@@ -1293,132 +1275,4 @@ section,
 
 .contact .php-email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 25%);
-}
-
-/*--------------------------------------------------------------
-# Portfolio Details Section
---------------------------------------------------------------*/
-.portfolio-details .portfolio-details-slider img {
-  width: 100%;
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
-  opacity: 1;
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
-}
-
-.portfolio-details .portfolio-info {
-  background-color: var(--surface-color);
-  padding: 30px;
-  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
-}
-
-.portfolio-details .portfolio-info h3 {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
-}
-
-.portfolio-details .portfolio-info ul {
-  list-style: none;
-  padding: 0;
-  font-size: 15px;
-}
-
-.portfolio-details .portfolio-info ul li+li {
-  margin-top: 10px;
-}
-
-.portfolio-details .portfolio-description {
-  padding-top: 30px;
-}
-
-.portfolio-details .portfolio-description h2 {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.portfolio-details .portfolio-description p {
-  padding: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-}
-
-/*--------------------------------------------------------------
-# Service Details Section
---------------------------------------------------------------*/
-.service-details .services-list {
-  background-color: var(--surface-color);
-  padding: 10px 30px;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  margin-bottom: 20px;
-}
-
-.service-details .services-list a {
-  display: block;
-  line-height: 1;
-  padding: 8px 0 8px 15px;
-  border-left: 3px solid color-mix(in srgb, var(--default-color), transparent 70%);
-  margin: 20px 0;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  transition: 0.3s;
-}
-
-.service-details .services-list a.active {
-  color: var(--heading-color);
-  font-weight: 700;
-  border-color: var(--accent-color);
-}
-
-.service-details .services-list a:hover {
-  border-color: var(--accent-color);
-}
-
-.service-details .services-img {
-  margin-bottom: 20px;
-}
-
-.service-details h3 {
-  font-size: 26px;
-  font-weight: 700;
-}
-
-.service-details h4 {
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.service-details p {
-  font-size: 15px;
-}
-
-.service-details ul {
-  list-style: none;
-  padding: 0;
-  font-size: 15px;
-}
-
-.service-details ul li {
-  padding: 5px 0;
-  display: flex;
-  align-items: center;
-}
-
-.service-details ul i {
-  font-size: 20px;
-  margin-right: 8px;
-  color: var(--accent-color);
 }

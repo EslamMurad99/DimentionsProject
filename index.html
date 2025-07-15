@@ -10,24 +10,27 @@
 
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <!-- Favicons -->
   <link href="assets/img/LogoDimention.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> 
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
+ 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> 
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <!--   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
 </head>
 
 <body class="index-page">
@@ -37,14 +40,10 @@
       <div>
         <img src="assets/img/LogoDimention.png" alt="Logo"
              style="position: relative;top: -8px;left: 35%;transform: translateX(-50%) rotate(0deg);
-                 width: 80px;height: 80px;border-radius: 50%;animation: spin 5s linear infinite;
-                z-index: 1000; margin-left: -60px;"/>
-      </div>
+                 width: 80px;height: 80px;border-radius: 50%;z-index: 1000; margin-left: -60px;"/>
+      </div> 
         <a href="index.html" class="logo d-flex align-items-center me-auto">
-          <!-- <h1 class="sitename">Dimensions</h1> -->
-           <h1 class="sitename animated-text">
-            <span>D</span><span>i</span><span>m</span><span>e</span><span>n</span><span>s</span><span>i</span><span>o</span><span>n</span><span>s</span>
-          </h1>
+          <h1 class="sitename">Dimensions</h1>
         </a>
        <nav id="navmenu" class="navmenu">
         <ul>
@@ -56,38 +55,57 @@
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-       <a class="btn-getstarted" href="#about">Get Started</a>
-      <div>
-        <img src="assets/img/LogoDimention.png" alt="Logo" 
-             style="position: relative;top: -8px;left: 140%;transform: translateX(-50%) rotate(0deg);
-                  width: 80px;height: 80px;border-radius: 50%;animation: spin 5s linear infinite;
-                  z-index: 1000;" />
-      </div>
     </div>
   </header>
 
   <main class="main">
-    <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
-            <h1>Dimensions Company for Operation and Maintenance </h1>
-            <p>Dimensions Company is a leading provider of comprehensive manpower solutions and event 
-               planning services for the hospitality industry in Saudi Arabia since 2003. </p>
-            <div class="d-flex">
-              <a href="#about" class="btn-get-started">Get Started</a>
-              <a href="" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
-            </div>
+
+   <section id="hero" class="hero section">
+      <div class="hero-bg-animation">
+        <div class="bg-particle"></div>
+        <div class="bg-particle"></div>
+        <div class="bg-particle"></div>
+        <div class="bg-particle"></div>
+        <div class="bg-particle"></div>
+        <div class="bg-particle"></div>
+        <div class="bg-particle"></div>
+        <div class="bg-particle"></div>
+      </div>
+      <div class="container position-relative z-2">
+        <div class="row gy-4 align-items-center">
+          <!-- النص على اليسار -->
+          <div class="col-lg-6 hero-text-content" data-aos="fade-right">
+            <h1 class="hero-title">Dimensions Company for Operation and Maintenance</h1>
+            <p class="hero-description">
+              Dimensions Company is a leading provider of comprehensive manpower solutions and event
+              planning services for the hospitality industry in Saudi Arabia since 2003.
+            </p>
           </div>
-          <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
-            <img src="assets/img/DimensionsLogo.png" class="img-fluid animated" alt="">
+          
+          <!-- الصورة على اليمين -->
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="hero-image-container">
+              <img src="assets/img/DimensionsLogo.png" alt="Dimensions Company" class="hero-image">
+              <div class="image-overlay"></div>
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- <div class="container position-relative z-2">
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-8 text-center hero-text-box backdrop-blur-sm p-4 rounded" data-aos="fade-down">
+            <h1>Dimensions Company for Operation and Maintenance</h1>
+            <p>
+              Dimensions Company is a leading provider of comprehensive manpower solutions and event
+              planning services for the hospitality industry in Saudi Arabia since 2003.
+            </p>
+    
+          </div>
+         
+        </div>
+      </div> -->
     </section>
-    <!-- /Hero Section -->
 
     <!-- Clients Section -->
     <section id="clients" class="clients section light-background">
@@ -133,14 +151,14 @@
             }
           </script>
           <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/c1.jpeg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/c2.jpeg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/c7.jpeg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/c4.jpeg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/c5.jpeg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/c6.jpeg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/c7.jpeg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/c8.jpeg" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/c1.jpeg" class="img-fluid" alt="client 1" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/c2.jpeg" class="img-fluid" alt="client 2" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/c7.jpeg" class="img-fluid" alt="client 3" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/c4.jpeg" class="img-fluid" alt="client 4" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/c5.jpeg" class="img-fluid" alt="client 5" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/c6.jpeg" class="img-fluid" alt="client 6" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/c7.jpeg" class="img-fluid" alt="client 7" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/c8.jpeg" class="img-fluid" alt="client 8" loading="lazy"></div>
           </div>
         </div>
 
@@ -156,212 +174,250 @@
       <div class="container">
         <div class="row gy-5 justify-content-center">
           <!-- VALUE -->
-          <div class="col-lg-4 col-md-6 text-center" data-aos="zoom-in" data-aos-delay="100">
-            <div class="p-4 shadow rounded bg-white h-100 card-hover">
+          <div class="col-lg-3 col-md-6 text-center" data-aos="zoom-in" data-aos-delay="100">
+            <div class="p-4 shadow-sm rounded bg-white h-100 card-hover">
               <h3 class="text-primary mb-3">Our <span class="text-dark">Value</span></h3>
-              <p class="animated-text">Diverse work environment,<br>
-                passion for working,<br>
-                with honesty and integrity,<br>
-                and one team</p>
+              <p>Diverse work environment,<br>passion for working,<br>with honesty and integrity,<br>and one team</p>
             </div>
           </div>
           <!-- MISSION -->
-          <div class="col-lg-4 col-md-6 text-center" data-aos="zoom-in" data-aos-delay="200">
-            <div class="p-4 shadow rounded bg-white h-100 card-hover">
+          <div class="col-lg-3 col-md-6 text-center" data-aos="zoom-in" data-aos-delay="200">
+            <div class="p-4 shadow-sm rounded bg-white h-100 card-hover">
               <h3 class="text-primary mb-3">Our <span class="text-dark">Mission</span></h3>
-              <p class="animated-text">To be the leading partner that clients and candidates always choose to connect with.</p>
+              <p>To be the leading partner that clients and candidates always choose to connect with.</p>
             </div>
           </div>
           <!-- VISION -->
-          <div class="col-lg-4 col-md-6 text-center" data-aos="zoom-in" data-aos-delay="300">
-            <div class="p-4 shadow rounded bg-white h-100 card-hover">
+          <div class="col-lg-3 col-md-6 text-center" data-aos="zoom-in" data-aos-delay="300">
+            <div class="p-4 shadow-sm rounded bg-white h-100 card-hover">
               <h3 class="text-primary mb-3">Our <span class="text-dark">Vision</span></h3>
-              <p class="animated-text">We strive to deliver what we promise the first time every time.</p>
+              <p>We strive to deliver what we promise the first time every time.</p>
             </div>
           </div>
-
+          <!-- ACHIEVEMENT -->
+          <div class="col-lg-3 col-md-6 text-center" data-aos="zoom-in" data-aos-delay="400">
+            <div class="p-4 shadow-sm rounded bg-white h-100 card-hover">
+              <h3 class="text-primary mb-3">Our <span class="text-dark">Achievement</span></h3>
+              <p>
+                Manpower: Participated in all F1 events<br>
+                Project: Fira Villas in BLVD World<br>
+                Recruitment: Hired top executive positions locally & internationally
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </section>    <!-- /About Us Section -->
+    </section>
+    <!-- /About Us Section -->
 
     <!-- Our Services Section -->
     <section id="services" class="services section light-background">
       <div class="container section-title" data-aos="fade-up">
         <h2>Our Services</h2>
-        <p> Elevate your business to new heights with
-            our hospitality-focused consultancy
-            services. With over 20 years of
-            experience and a vast network, we offer
-            unparalleled solutions and guidance.
-            Discover customized recruitment and
-            outsourcing plans designed to streamline
-            your operations and propel your success.
+        <p>
+          Elevate your business to new heights with our hospitality-focused consultancy services.
+          With over 20 years of experience and a vast network, we offer unparalleled solutions and guidance.
+          Discover customized recruitment and outsourcing plans designed to streamline your operations and propel your success.
         </p>
       </div>
-          
-    <div class="container">
-      <div class="row gy-4 gx-4 justify-content-center">
-        <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-          <div class="service-item position-relative">
-            <div class="icon"><i class="bi bi-activity icon"></i></div>
-            <h4><a href="" class="stretched-link">Hospitality Solutions</a></h4>
-            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-          </div>
-        </div>
 
-        <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-          <div class="service-item position-relative">
-            <div class="icon"><i class="bi bi-bounding-box-circles icon"></i></div>
-            <h4><a href="" class="stretched-link">Events Management</a></h4>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-          </div>
-        </div>
-
-        <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-          <div class="service-item position-relative">
-            <div class="icon"><i class="bi bi-calendar4-week icon"></i></div>
-            <h4><a href="" class="stretched-link">Recruitment Services</a></h4>
-            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    </section><!-- / Our Services Section -->
-
-    <!-- Our Projects -->
-    <section id="portfolio" class="portfolio section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Our Projects</h2>
-        <p> Not just participants, we're pioneers: Proud to be part of this project</p>
-      </div>
       <div class="container">
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/portfolio/1.PNG" class="img-fluid" alt="">
-              <div class="portfolio-info">
+        <div class="row gy-4 gx-4 justify-content-center">
+          <!-- Hospitality Solutions -->
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative text-center">
+              <div class="icon mb-3"><i class="bi bi-activity"></i></div>
+              <h4><a href="#" class="stretched-link">Hospitality Solutions</a></h4>
+              <p>
+                We provide comprehensive hospitality solutions, including staffing, training, and operational support for hotels, restaurants, and large-scale events across Saudi Arabia.
+              </p>
+            </div>
+          </div>
+
+          <!-- Events Management -->
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative text-center">
+              <div class="icon mb-3"><i class="bi bi-bounding-box-circles"></i></div>
+              <h4><a href="#" class="stretched-link">Events Management</a></h4>
+              <p>
+                From concept to execution, we manage all aspects of event planning, logistics, staffing, and coordination to deliver exceptional experiences for national and international events.
+              </p>
+            </div>
+          </div>
+
+          <!-- Recruitment Services -->
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative text-center">
+              <div class="icon mb-3"><i class="bi bi-calendar4-week"></i></div>
+              <h4><a href="#" class="stretched-link">Recruitment Services</a></h4>
+              <p>
+                We provide end-to-end recruitment solutions, sourcing skilled professionals locally and globally to meet the specific needs of the hospitality and service industries.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- / Our Services Section -->
+
+       <!-- Our Projects -->
+    <section id="portfolio" class="portfolio section">
+      <div class="container section-title text-center" data-aos="fade-up">
+        <h2>Our Projects</h2>
+        <p>Not just participants, we're pioneers: Proud to be part of this project</p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
+          <!-- Repeat this block for each project -->
+          <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-img-box position-relative overflow-hidden rounded shadow">
+              <img src="assets/img/portfolio/1.PNG" class="img-fluid" alt="Project 1" loading="lazy">
+              <div class="portfolio-info text-white p-3">
                 <h4>Project 1</h4>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/portfolio/2.PNG" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Project 2</h4>
+          </div>
+
+          <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-img-box position-relative overflow-hidden rounded shadow">
+              <img src="assets/img/portfolio/2.PNG" class="img-fluid" alt="Project 2" loading="lazy">
+              <div class="portfolio-info text-white p-3">
+                <h4>Project 1</h4>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/portfolio/3.PNG" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Project 3</h4>
+          </div>
+
+          <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-img-box position-relative overflow-hidden rounded shadow">
+              <img src="assets/img/portfolio/3.PNG" class="img-fluid" alt="Project 3" loading="lazy">
+              <div class="portfolio-info text-white p-3">
+                <h4>Project 1</h4>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/portfolio/4.PNG" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Project 4</h4>
+          </div>
+
+          <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-img-box position-relative overflow-hidden rounded shadow">
+              <img src="assets/img/portfolio/4.PNG" class="img-fluid" alt="Project 4" loading="lazy">
+              <div class="portfolio-info text-white p-3">
+                <h4>Project 1</h4>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/portfolio/5.PNG" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Project 5</h4>
+          </div>
+
+          <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-img-box position-relative overflow-hidden rounded shadow">
+              <img src="assets/img/portfolio/5.PNG" class="img-fluid" alt="Project 5" loading="lazy">
+              <div class="portfolio-info text-white p-3">
+                <h4>Project 1</h4>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/portfolio/6.PNG" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Project 6</h4>
+          </div>
+
+          <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-img-box position-relative overflow-hidden rounded shadow">
+              <img src="assets/img/portfolio/6.PNG" class="img-fluid" alt="Project 6" loading="lazy">
+              <div class="portfolio-info text-white p-3">
+                <h4>Project 1</h4>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/portfolio/7.PNG" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Project 7</h4>
+          </div>
+
+          <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-img-box position-relative overflow-hidden rounded shadow">
+              <img src="assets/img/portfolio/7.PNG" class="img-fluid" alt="Project 7" loading="lazy">
+              <div class="portfolio-info text-white p-3">
+                <h4>Project 1</h4>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/portfolio/8.PNG" class="img-fluid" alt="">
-              <div class="portfolio-info">
+          </div>
+
+          <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-img-box position-relative overflow-hidden rounded shadow">
+              <img src="assets/img/portfolio/8.PNG" class="img-fluid" alt="Project 8" loading="lazy">
+              <div class="portfolio-info text-white p-3">
                 <h4>Project 8</h4>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/portfolio/5.PNG" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Project 9</h4>
-              </div>
-            </div> 
           </div>
         </div>
       </div>
-    </section><!-- /Portfolio Section -->
+    </section>
 
     <!-- Contact Us Section -->
     <section id="contact" class="contact section">
-      <div class="container section-title" data-aos="fade-up">
+      <div class="container section-title">
         <h2>Contact Us</h2>
         <p>“Our main objective is to optimize your costs and time.”</p>
       </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="container">
         <div class="row gy-4">
+          <!-- Contact Info -->
           <div class="col-lg-5">
             <div class="info-wrap">
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+              <div class="info-item d-flex align-items-start mb-4">
                 <i class="bi bi-geo-alt flex-shrink-0"></i>
                 <div>
                   <h3>Location</h3>
                   <p><a href="https://maps.app.goo.gl/LK2V14DhNsyyuKD77" target="_blank">DimensionsLocation</a></p>
                 </div>
               </div>
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+
+              <div class="info-item d-flex align-items-start mb-4">
                 <i class="bi bi-telephone flex-shrink-0"></i>
                 <div>
                   <h3>Call Us</h3>
                   <p>+966560890016</p>
                 </div>
               </div>
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+
+              <div class="info-item d-flex align-items-start mb-4">
                 <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
                   <h3>Email Us</h3>
                   <p>info@dimen.jobs</p>
                 </div>
               </div>
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
-                  <i class="bi bi-instagram flex-shrink-0"></i>
-                  <div>
-                    <h3>Instagram</h3>
-                    <p>
-                      <a href="https://www.instagram.com/dimen.hospitality?igsh=MXFycGY5bGEycndoaQ==" target="_blank">DimensionsInstagram</a>
-                    </p>
-                  </div>
-              </div> <!-- align-items-center /  social-icon -->
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="600">
-                  <i class="bi bi-linkedin flex-shrink-0"></i>
-                  <div>
-                    <h3>LinkedIn</h3>
-                    <p>
-                      <a href="https://www.linkedin.com/company/dimensions_2/" target="_blank">DimensionsLinkedin</a>
-                    </p>
-                  </div>
+
+              <div class="info-item d-flex align-items-start mb-4">
+                <i class="bi bi-instagram flex-shrink-0"></i>
+                <div>
+                  <h3>Instagram</h3>
+                  <p><a href="https://www.instagram.com/dimen.hospitality?igsh=MXFycGY5bGEycndoaQ==" target="_blank">DimensionsInstagram</a></p>
+                </div>
+              </div>
+
+              <div class="info-item d-flex align-items-start">
+                <i class="bi bi-linkedin flex-shrink-0"></i>
+                <div>
+                  <h3>LinkedIn</h3>
+                  <p><a href="https://www.linkedin.com/company/dimensions_2/" target="_blank">DimensionsLinkedin</a></p>
+                </div>
               </div>
             </div>
           </div>
+
+          <!-- Contact Form -->
           <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <form action="forms/contact.php" method="post" class="php-email-form">
               <div class="row gy-4">
                 <div class="col-md-6">
                   <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                  <input type="text" name="name" id="name-field" class="form-control" required>
                 </div>
+
                 <div class="col-md-6">
                   <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
+                  <input type="email" class="form-control" name="email" id="email-field" required>
                 </div>
+
                 <div class="col-md-12">
                   <label for="message-field" class="pb-2">What The Service you Need</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                  <textarea class="form-control" name="message" rows="10" id="message-field" required></textarea>
                 </div>
+
                 <div class="col-md-12 text-center">
                   <div class="error-message"></div>
                   <button type="submit" id="sendRequest">Send Service</button>
@@ -371,7 +427,8 @@
           </div>
         </div>
       </div>
-    </section><!-- /Contact Section -->
+    </section>
+    <!-- /Contact Section -->
 
   </main>
  
@@ -383,12 +440,20 @@
             <span class="sitename">Dimensions</span>
           </a>
           <div class="footer-contact pt-3">
-            <p class="mt-3"><strong>Phone :</strong> <span>+966560890016</span></p>
-            <p class="mt-3"><strong>WhatsApp :</strong> <span>+966594815110</span></p>
-            <p><strong>Email :</strong> <span>info@dimen.jobs</span></p>
+            <p class="mt-3 d-flex align-items-center">
+              <i class="bi bi-telephone-fill me-2"></i>
+              <strong>Phone:</strong> <span class="ms-1">+966560890016</span>
+            </p>
+            <p class="mt-3 d-flex align-items-center">
+              <i class="bi bi-whatsapp me-2"></i>
+              <strong>WhatsApp:</strong> <span class="ms-1">+966594815110</span>
+            </p>
+            <p class="d-flex align-items-center">
+              <i class="bi bi-envelope-fill me-2"></i>
+              <strong>Email:</strong> <span class="ms-1">info@dimen.jobs</span>
+            </p>
           </div>
         </div>
-        
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Useful Links</h4>
           <ul>
@@ -399,7 +464,6 @@
             <li><i class="bi bi-chevron-right"></i> <a href="#contact">Contact Us</a></li>
           </ul>
         </div>
-
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Our Services</h4>
           <ul>
@@ -408,7 +472,6 @@
             <li><i class="bi bi-chevron-right"></i> <a href="#services">Recruitment Services</a></li>
           </ul>
         </div>
-
         <div class="col-lg-4 col-md-12">
           <h4>Follow Us</h4>
           <p>Connect with us on social media for updates, insights, and more.</p>
@@ -421,26 +484,23 @@
             <a href="https://www.linkedin.com/company/dimensions_2/"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
-
       </div>
     </div>
-
     <div class="container copyright text-center mt-4">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">Dimensions</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
         Designed by <a href="https://www.facebook.com/share/16vthP4Fac/">Alt Mate</a>
       </div>
     </div>
-
   </footer>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
     <i class="bi bi-arrow-up-short"></i>
-  </a>
+  </a> 
 
   <!-- Preloader -->
-  <div id="preloader"></div>
+ <div id="preloader"></div> 
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -452,7 +512,35 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/js/main.js"></script> 
+  <script src="assets/js/main.js"></script>
+  
+<!-- ✅ CDN رسمي خفيف ومحدث لـ Swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
+
+<script defer>
+  document.addEventListener("DOMContentLoaded", function () {
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      speed: 500, // ✅ قلل سرعة التحريك (أسرع وأكثر استجابة)
+      autoplay: {
+        delay: 4000, // ✅ قلل التأخير قليلاً لتحسين التفاعل
+        disableOnInteraction: false
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      },
+      slidesPerView: 1,
+      spaceBetween: 0,
+      effect: 'slide',
+      // ✅ تحسين إضافي للأداء في الهواتف
+      observer: true,
+      observeParents: true,
+    });
+  });
+</script>
+
+
 </body>
 
 </html>
