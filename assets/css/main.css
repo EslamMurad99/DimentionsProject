@@ -1130,6 +1130,52 @@ section,
   color: var(--contrast-color);
 }
 
+/* Numbers and Experience*/
+ #project-stats {
+  padding: 60px 0;
+}
+
+.swiper {
+  position: relative;
+  padding: 20px 0;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+ /* Arrows customization */
+.custom-prev, .custom-next {
+  color: #374f7e;
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 10;
+  transform: translateY(-50%);
+}
+
+.custom-prev {
+  left: -20px;
+}
+
+.custom-next {
+  right: -20px;
+}
+ 
+/* Stat card animation */
+.stat-card {
+  background-color: #f8f9fa;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
 
 /*--------------------------------------------------------------
 # Contact Section

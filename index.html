@@ -30,6 +30,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 </head>
 
@@ -345,6 +348,69 @@
       </div>
     </section>
 
+<!--Numbers and Experience-->
+    <section id="project-stats" class="section bg-white text-dark">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center mb-5">
+          <h2 style="color: rgb(55, 81, 126);">Our Numbers and Experiences</h2>
+          <p style="color: rgb(46, 44, 44);">Discover the progress and milestones of our major projects through the years</p>
+        </div>
+        <div class="swiper projectStatsSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="stat-card p-4 rounded shadow bg-light text-center">
+                <h4 class="fw-bold">Formula 1</h4>
+                <p>Dec 2021 - Mar 2022 - Mar 2023 - Mar 2024 - April 2025</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="stat-card p-4 rounded shadow bg-light text-center">
+                <h4 class="fw-bold">Al Mirkaz</h4>
+                <p>Ramadan 2022 - 2023 - 2024 - 2025</p>
+              </div>
+            </div>    
+            <div class="swiper-slide">
+              <div class="stat-card p-4 rounded shadow bg-light text-center">
+                <h4 class="fw-bold">Fira Villas</h4>
+                <p>Blvd 2024 - 2025</p>
+              </div>
+            </div>    
+            <div class="swiper-slide">
+              <div class="stat-card p-4 rounded shadow bg-light text-center">
+                <h4 class="fw-bold">Banyan Tree</h4>
+                <p>2023 - 2024 - 2025</p>
+              </div>
+            </div>            
+            <div class="swiper-slide">
+              <div class="stat-card p-4 rounded shadow bg-light text-center">
+                <h4 class="fw-bold">Jeddah Season</h4>
+                <p>June 2022 - June 2023</p>
+              </div>
+            </div>           
+            <div class="swiper-slide">
+              <div class="stat-card p-4 rounded shadow bg-light text-center">
+                <h4 class="fw-bold">FIFA Club World Cup</h4>
+                <p>2023</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="stat-card p-4 rounded shadow bg-light text-center">
+                <h4 class="fw-bold">Riyadh Season</h4>
+                <p>2021 - 2022 - 2023</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="stat-card p-4 rounded shadow bg-light text-center">
+                <h4 class="fw-bold">Al Balad</h4>
+                <p>Ramadan 2023</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Numbers and Experience-->
+
     <!-- Contact Us Section -->
     <section id="contact" class="contact section">
       <div class="container section-title">
@@ -513,32 +579,50 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/js/main.js"></script>
-  
-<!-- ✅ CDN رسمي خفيف ومحدث لـ Swiper -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
-
-<script defer>
-  document.addEventListener("DOMContentLoaded", function () {
-    const swiper = new Swiper(".mySwiper", {
-      loop: true,
-      speed: 500, // ✅ قلل سرعة التحريك (أسرع وأكثر استجابة)
-      autoplay: {
-        delay: 4000, // ✅ قلل التأخير قليلاً لتحسين التفاعل
-        disableOnInteraction: false
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-      },
-      slidesPerView: 1,
-      spaceBetween: 0,
-      effect: 'slide',
-      // ✅ تحسين إضافي للأداء في الهواتف
-      observer: true,
-      observeParents: true,
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", function () {
+      const swiper = new Swiper(".mySwiper", {
+        loop: true,
+        speed: 500, // ✅ قلل سرعة التحريك (أسرع وأكثر استجابة)
+        autoplay: {
+          delay: 4000, // ✅ قلل التأخير قليلاً لتحسين التفاعل
+          disableOnInteraction: false
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        },
+        slidesPerView: 1,
+        spaceBetween: 0,
+        effect: 'slide',
+        // ✅ تحسين إضافي للأداء في الهواتف
+        observer: true,
+        observeParents: true,
+      });
     });
-  });
-</script>
+  </script>
+  <script>
+    var swiper = new Swiper(".projectStatsSwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      loop: true,
+      navigation: {
+        nextEl: ".custom-next",
+        prevEl: ".custom-prev",
+      },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        0: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        992: { slidesPerView: 3 }
+      }
+    });
+  </script>
 
 
 </body>
