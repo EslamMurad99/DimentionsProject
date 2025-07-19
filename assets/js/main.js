@@ -15,39 +15,144 @@
 window.addEventListener('DOMContentLoaded', () => {
   console.log('DOMContentLoaded fired');
   
+  // Only show splash screen on home page
+  const isHomePage = window.location.pathname === '/' || 
+                    window.location.pathname === '/index.html' || 
+                    window.location.pathname.endsWith('index.html');
+  
   const intro = document.querySelector('.intro');
   const logo = document.querySelector('.intro .logo');
 
   console.log('intro:', intro);
   console.log('logo:', logo);
+  console.log('isHomePage:', isHomePage);
+  console.log('Current pathname:', window.location.pathname);
 
-  if (!intro || !logo) {
-    console.error('Required elements not found');
+  // If not home page or elements don't exist, hide splash screen immediately
+  if (!isHomePage || !intro || !logo) {
+    if (intro) {
+      intro.style.display = 'none';
+    }
+    console.log('Splash screen hidden - not home page or elements not found');
     return;
   }
 
-  console.log('All elements found, starting animation...');
+  // Check if this is an external visit (not from internal navigation)
+  const isExternalVisit = !sessionStorage.getItem('internal-navigation');
+  const referrer = document.referrer;
+  const isFromSameDomain = referrer && (referrer.includes(window.location.hostname) || referrer.includes('localhost'));
+  
+  console.log('Navigation info:', {
+    isExternalVisit,
+    referrer,
+    isFromSameDomain,
+    sessionStorage: sessionStorage.getItem('internal-navigation')
+  });
+
+  // Don't show splash screen if navigating internally
+  if (!isExternalVisit || isFromSameDomain) {
+    console.log('Internal navigation detected, hiding splash screen');
+    intro.style.display = 'none';
+    return;
+  }
+
+  console.log('External visit detected, showing splash screen...');
+
+  // Ensure the intro is visible and properly positioned
+  intro.style.display = 'flex';
+  intro.style.top = '0';
+  intro.style.zIndex = '9999';
+  
+  // Ensure logo starts in correct state
+  logo.style.opacity = '0';
+  logo.style.transform = 'translateY(20px)';
+  logo.classList.remove('logo-active', 'logo-fade');
+
+  console.log('Initial logo state:', {
+    opacity: logo.style.opacity,
+    transform: logo.style.transform,
+    classes: logo.className
+  });
 
   // Start the animation sequence
   setTimeout(() => {
     console.log('Adding logo-active class...');
     logo.classList.add('logo-active');
     console.log('Logo classes after adding:', logo.className);
-  }, 500);
+    console.log('Logo computed styles:', {
+      opacity: getComputedStyle(logo).opacity,
+      transform: getComputedStyle(logo).transform
+    });
+    
+    // Fallback: If CSS transition doesn't work, use JavaScript animation
+    setTimeout(() => {
+      const computedOpacity = getComputedStyle(logo).opacity;
+      if (computedOpacity === '0') {
+        console.log('CSS transition failed, using JavaScript fallback');
+        logo.style.opacity = '1';
+        logo.style.transform = 'translateY(0)';
+      }
+    }, 200);
+  }, 100);
 
   // Fade out the logo
   setTimeout(() => {
     console.log('Adding logo-fade class...');
     logo.classList.remove('logo-active');
     logo.classList.add('logo-fade');
-  }, 2500);
+    console.log('Logo classes after fade:', logo.className);
+    
+    // Fallback: If CSS transition doesn't work, use JavaScript animation
+    setTimeout(() => {
+      const computedOpacity = getComputedStyle(logo).opacity;
+      if (computedOpacity === '1') {
+        console.log('CSS fade transition failed, using JavaScript fallback');
+        logo.style.opacity = '0';
+        logo.style.transform = 'translateY(-20px)';
+      }
+    }, 200);
+  }, 3000);
 
   // Hide the splash screen
   setTimeout(() => {
     console.log('Moving intro up...');
     intro.style.top = '-100vh';
-  }, 2800);
+    
+    // Remove the intro element after animation completes
+    setTimeout(() => {
+      intro.style.display = 'none';
+      console.log('Splash screen completely hidden');
+    }, 1000);
+  }, 3500);
 });
+
+// Track internal navigation
+document.addEventListener('DOMContentLoaded', () => {
+  // Mark internal navigation for all navigation links
+  const navLinks = document.querySelectorAll('a[href], .navmenu a, .mobile-nav-link');
+  
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      
+      // Only mark as internal if it's a link to the same site
+      if (href && (href.startsWith('#') || 
+                   href.startsWith('./') || 
+                   href.startsWith('/') || 
+                   href.includes(window.location.hostname) ||
+                   href.endsWith('.html'))) {
+        console.log('Internal navigation detected:', href);
+        sessionStorage.setItem('internal-navigation', 'true');
+      }
+    });
+  });
+});
+
+// Test function to reset splash screen (for development/testing)
+window.resetSplashScreen = function() {
+  sessionStorage.removeItem('internal-navigation');
+  console.log('Splash screen reset. Refresh the page to see it again.');
+};
 
 
   function toggleScrolled() {
@@ -62,10 +167,10 @@ window.addEventListener('DOMContentLoaded', () => {
       scrollTopBtn.classList.toggle('active', window.scrollY > 100);
   }
 
+  // Mobile navigation is now handled by mobile-nav.js
   function mobileNavToggle() {
-    body.classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
+    // This function is kept for compatibility but mobile navigation is handled separately
+    console.log('Mobile navigation toggle - handled by mobile-nav.js');
   }
 
   function navmenuScrollspy() {
@@ -149,6 +254,13 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function initParallax() {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      document.documentElement.style.setProperty('--scroll-offset', scrolled);
+    });
+  }
+
   /* أحداث الصفحة */
   document.addEventListener('scroll', () => {
     toggleScrolled();
@@ -163,6 +275,7 @@ window.addEventListener('DOMContentLoaded', () => {
     aosInit();
     initSwiper();
     initClientsSwiper();
+    initParallax();
     if (document.querySelector('#preloader')) {
       document.querySelector('#preloader').remove();
     }
@@ -175,9 +288,10 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  if (mobileNavToggleBtn) {
-    mobileNavToggleBtn.addEventListener('click', mobileNavToggle);
-  }
+  // Mobile navigation events are now handled by mobile-nav.js
+  // if (mobileNavToggleBtn) {
+  //   mobileNavToggleBtn.addEventListener('click', mobileNavToggle);
+  // }
 
   navLinks.forEach(link => {
     link.addEventListener('click', () => {

@@ -26,6 +26,8 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <!-- Mobile Navigation CSS -->
+  <link href="assets/css/mobile-nav.css" rel="stylesheet">
   <!--   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.css">
@@ -46,23 +48,17 @@
 
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
-      <div>
-        <img src="assets/img/LogoDimention.png" alt="Logo"
-             style="position: relative;top: -8px;left: 35%;transform: translateX(-50%) rotate(0deg);
-                 width: 80px;height: 80px;border-radius: 50%;z-index: 1000; margin-left: -60px;"/>
-      </div> 
-        <a href="index.html" class="logo d-flex align-items-center me-auto">
-          <h1 class="sitename">Dimensions</h1>
-        </a>
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <img src="assets/img/DimensionsLogo.png" alt="Dimensions Logo"/>
+      </a>
        <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
           <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Our Services</a></li>
-          <li><a href="#portfolio">Our Projects</a></li>
-          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="projects.html">Our Projects</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
     </div>
   </header>
@@ -71,15 +67,9 @@
 
 
    <section id="hero" class="hero section">
-      <div class="hero-bg-animation">
-        <div class="bg-particle"></div>
-        <div class="bg-particle"></div>
-        <div class="bg-particle"></div>
-        <div class="bg-particle"></div>
-        <div class="bg-particle"></div>
-        <div class="bg-particle"></div>
-        <div class="bg-particle"></div>
-        <div class="bg-particle"></div>
+      <div class="hero-bg-image">
+        <img src="assets/img/WhatsApp Image 2024-12-26 at 15.35.42_e96285a6.jpg" alt="Hero Background" class="bg-image">
+        <div class="bg-overlay"></div>
       </div>
       <div class="container position-relative z-2">
         <div class="row gy-4 align-items-center">
@@ -208,37 +198,46 @@
 
       <div class="container">
         <div class="row gy-4 gx-4 justify-content-center">
-          <!-- Hospitality Solutions -->
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+          <!-- Event Management -->
+          <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item position-relative text-center">
-              <div class="icon mb-3"><i class="bi bi-activity"></i></div>
-              <h4><a href="#" class="stretched-link">Hospitality Solutions</a></h4>
+              <div class="icon mb-3"><i class="bi bi-calendar-check"></i></div>
+              <h4><a href="services.html" class="stretched-link">Event Management</a></h4>
               <p>
-                We provide comprehensive hospitality solutions, including staffing, training, and operational support for hotels, restaurants, and large-scale events across Saudi Arabia.
+                "Effortless elegance. Unforgettable events." From pre-event planning to on-site management and budgeting, we handle every aspect of your event to ensure flawless execution.
               </p>
             </div>
           </div>
 
-          <!-- Events Management -->
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+          <!-- Manpower Services -->
+          <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item position-relative text-center">
-              <div class="icon mb-3"><i class="bi bi-bounding-box-circles"></i></div>
-              <h4><a href="#" class="stretched-link">Events Management</a></h4>
+              <div class="icon mb-3"><i class="bi bi-people-fill"></i></div>
+              <h4><a href="services.html" class="stretched-link">Manpower Services</a></h4>
               <p>
-                From concept to execution, we manage all aspects of event planning, logistics, staffing, and coordination to deliver exceptional experiences for national and international events.
+                "Where Hospitality Meets Expertise." Comprehensive outsourcing, recruitment, and consultancy services to build your world-class workforce and optimize your operations.
               </p>
             </div>
           </div>
 
-          <!-- Recruitment Services -->
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+          <!-- Consultancy Service -->
+          <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
             <div class="service-item position-relative text-center">
-              <div class="icon mb-3"><i class="bi bi-calendar4-week"></i></div>
-              <h4><a href="#" class="stretched-link">Recruitment Services</a></h4>
+              <div class="icon mb-3"><i class="bi bi-lightbulb"></i></div>
+              <h4><a href="services.html" class="stretched-link">Consultancy Service</a></h4>
               <p>
-                We provide end-to-end recruitment solutions, sourcing skilled professionals locally and globally to meet the specific needs of the hospitality and service industries.
+                With over 20 years of experience, we provide strategic guidance and customized solutions to elevate your hospitality business to new heights.
               </p>
             </div>
+          </div>
+        </div>
+        
+        <div class="row mt-5">
+          <div class="col-12 text-center" data-aos="fade-up" data-aos-delay="400">
+            <a href="services.html" class="btn btn-primary btn-lg">
+              <i class="bi bi-arrow-right me-2"></i>
+              View All Services
+            </a>
           </div>
         </div>
       </div>
@@ -254,75 +253,130 @@
 
       <div class="container">
         <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
-          <!-- Repeat this block for each project -->
+          <!-- Project 1 -->
           <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
-            <div class="portfolio-img-box position-relative overflow-hidden rounded shadow">
-              <img src="assets/img/portfolio/1.PNG" class="img-fluid" alt="Project 1" loading="lazy">
-              <div class="portfolio-info text-white p-3">
-                <h4>Project 1</h4>
+            <div class="portfolio-flip-card">
+              <div class="portfolio-flip-card-inner">
+                <div class="portfolio-flip-card-front">
+                  <img src="assets/img/projects/IMG-20250717-WA0053_image_repair_1752928851354.jpg" class="img-fluid" alt="Formula 1 Project" loading="lazy">
+                </div>
+                <div class="portfolio-flip-card-back">
+                  <div class="portfolio-back-content">
+                    <h4>GOLF SAUDI JEDDAH</h4>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
+          <!-- Project 2 -->
           <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
-            <div class="portfolio-img-box position-relative overflow-hidden rounded shadow">
-              <img src="assets/img/portfolio/2.PNG" class="img-fluid" alt="Project 2" loading="lazy">
-              <div class="portfolio-info text-white p-3">
-                <h4>Project 1</h4>
+            <div class="portfolio-flip-card">
+              <div class="portfolio-flip-card-inner">
+                <div class="portfolio-flip-card-front">
+                  <img src="assets/img/projects/IMG-20250717-WA0054_image_repair_1752928741684.jpg" class="img-fluid" alt="Al Mirkaz Project" loading="lazy">
+                </div>
+                <div class="portfolio-flip-card-back">
+                  <div class="portfolio-back-content">
+                    <h4>SWAROVSKI EVENTS RIYADH</h4>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
+          <!-- Project 3 -->
           <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
-            <div class="portfolio-img-box position-relative overflow-hidden rounded shadow">
-              <img src="assets/img/portfolio/3.PNG" class="img-fluid" alt="Project 3" loading="lazy">
-              <div class="portfolio-info text-white p-3">
-                <h4>Project 1</h4>
+            <div class="portfolio-flip-card">
+              <div class="portfolio-flip-card-inner">
+                <div class="portfolio-flip-card-front">
+                  <img src="assets/img/projects/IMG-20250717-WA0055_image_repair_1752928896029.jpg" class="img-fluid" alt="Fira Villas Project" loading="lazy">
+                </div>
+                <div class="portfolio-flip-card-back">
+                  <div class="portfolio-back-content">
+                    <h4>CITY WALK JEDDAH</h4>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
+          <!-- Project 4 -->
           <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
-            <div class="portfolio-img-box position-relative overflow-hidden rounded shadow">
-              <img src="assets/img/portfolio/4.PNG" class="img-fluid" alt="Project 4" loading="lazy">
-              <div class="portfolio-info text-white p-3">
-                <h4>Project 1</h4>
+            <div class="portfolio-flip-card">
+              <div class="portfolio-flip-card-inner">
+                <div class="portfolio-flip-card-front">
+                  <img src="assets/img/projects/IMG-20250717-WA0056_image_repair_1752928931064.jpg" class="img-fluid" alt="Banyan Tree Project" loading="lazy">
+                </div>
+                <div class="portfolio-flip-card-back">
+                  <div class="portfolio-back-content">
+                    <h4>AL BALAD-RAMADAN JEDDAH</h4>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
+          <!-- Project 5 -->
           <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
-            <div class="portfolio-img-box position-relative overflow-hidden rounded shadow">
-              <img src="assets/img/portfolio/5.PNG" class="img-fluid" alt="Project 5" loading="lazy">
-              <div class="portfolio-info text-white p-3">
-                <h4>Project 1</h4>
+            <div class="portfolio-flip-card">
+              <div class="portfolio-flip-card-inner">
+                <div class="portfolio-flip-card-front">
+                  <img src="assets/img/projects/IMG-20250717-WA0057_image_repair_1752928966241.jpg" class="img-fluid" alt="Jeddah Season Project" loading="lazy">
+                </div>
+                <div class="portfolio-flip-card-back">
+                  <div class="portfolio-back-content">
+                    <h4>FORMULA 1 JEDDAH</h4>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
+          <!-- Project 6 -->
           <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
-            <div class="portfolio-img-box position-relative overflow-hidden rounded shadow">
-              <img src="assets/img/portfolio/6.PNG" class="img-fluid" alt="Project 6" loading="lazy">
-              <div class="portfolio-info text-white p-3">
-                <h4>Project 1</h4>
+            <div class="portfolio-flip-card">
+              <div class="portfolio-flip-card-inner">
+                <div class="portfolio-flip-card-front">
+                  <img src="assets/img/projects/IMG-20250717-WA0058_image_repair_1752928998433.jpg" class="img-fluid" alt="FIFA Club World Cup Project" loading="lazy">
+                </div>
+                <div class="portfolio-flip-card-back">
+                  <div class="portfolio-back-content">
+                    <h4>FIFA Club World Cup</h4>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
+          <!-- Project 7 -->
           <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
-            <div class="portfolio-img-box position-relative overflow-hidden rounded shadow">
-              <img src="assets/img/portfolio/7.PNG" class="img-fluid" alt="Project 7" loading="lazy">
-              <div class="portfolio-info text-white p-3">
-                <h4>Project 1</h4>
+            <div class="portfolio-flip-card">
+              <div class="portfolio-flip-card-inner">
+                <div class="portfolio-flip-card-front">
+                  <img src="assets/img/projects/snapedit_1752931408497.jpeg" class="img-fluid" alt="Riyadh Season Project" loading="lazy">
+                </div>
+                <div class="portfolio-flip-card-back">
+                  <div class="portfolio-back-content">
+                    <h4>MDL BEAST RIYADH</h4>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
+          <!-- Project 8 -->
           <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
-            <div class="portfolio-img-box position-relative overflow-hidden rounded shadow">
-              <img src="assets/img/portfolio/8.PNG" class="img-fluid" alt="Project 8" loading="lazy">
-              <div class="portfolio-info text-white p-3">
-                <h4>Project 8</h4>
+            <div class="portfolio-flip-card">
+              <div class="portfolio-flip-card-inner">
+                <div class="portfolio-flip-card-front">
+                  <img src="assets/img/projects/WhatsApp Image 2025-07-19 at 3.24.19 PM.png" class="img-fluid" alt="Al Balad Project" loading="lazy">
+                </div>
+                <div class="portfolio-flip-card-back">
+                  <div class="portfolio-back-content">
+                    <h4>PLAY LAND RIYADH</h4>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -393,90 +447,7 @@
     </section>
     <!-- /Numbers and Experience-->
 
-    <!-- Contact Us Section -->
-    <section id="contact" class="contact section">
-      <div class="container section-title">
-        <h2>Contact Us</h2>
-        <p>“Our main objective is to optimize your costs and time.”</p>
-      </div>
 
-      <div class="container">
-        <div class="row gy-4">
-          <!-- Contact Info -->
-          <div class="col-lg-5">
-            <div class="info-wrap">
-              <div class="info-item d-flex align-items-start mb-4">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h3>Location</h3>
-                  <p><a href="https://maps.app.goo.gl/LK2V14DhNsyyuKD77" target="_blank">DimensionsLocation</a></p>
-                </div>
-              </div>
-
-              <div class="info-item d-flex align-items-start mb-4">
-                <i class="bi bi-telephone flex-shrink-0"></i>
-                <div>
-                  <h3>Call Us</h3>
-                  <p>+966560890016</p>
-                </div>
-              </div>
-
-              <div class="info-item d-flex align-items-start mb-4">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>Email Us</h3>
-                  <p>info@dimen.jobs</p>
-                </div>
-              </div>
-
-              <div class="info-item d-flex align-items-start mb-4">
-                <i class="bi bi-instagram flex-shrink-0"></i>
-                <div>
-                  <h3>Instagram</h3>
-                  <p><a href="https://www.instagram.com/dimen.hospitality?igsh=MXFycGY5bGEycndoaQ==" target="_blank">DimensionsInstagram</a></p>
-                </div>
-              </div>
-
-              <div class="info-item d-flex align-items-start">
-                <i class="bi bi-linkedin flex-shrink-0"></i>
-                <div>
-                  <h3>LinkedIn</h3>
-                  <p><a href="https://www.linkedin.com/company/dimensions_2/" target="_blank">DimensionsLinkedin</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Contact Form -->
-          <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form">
-              <div class="row gy-4">
-                <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required>
-                </div>
-
-                <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required>
-                </div>
-
-                <div class="col-md-12">
-                  <label for="message-field" class="pb-2">What The Service you Need</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="error-message"></div>
-                  <button type="submit" id="sendRequest">Send Service</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- /Contact Section -->
 
   </main>
  
@@ -508,16 +479,16 @@
             <li><i class="bi bi-chevron-right"></i> <a href="#hero">Home</a></li>
             <li><i class="bi bi-chevron-right"></i> <a href="#about">About us</a></li>
             <li><i class="bi bi-chevron-right"></i> <a href="#services">Our Services</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#portfolio">Our Projects</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#contact">Contact Us</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="projects.html">Our Projects</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#services">Hospitality Solutions</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#services">Events Management</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#services">Recruitment Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Event Management</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Manpower Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Consultancy Service</a></li>
           </ul>
         </div>
         <div class="col-lg-4 col-md-12">
@@ -547,6 +518,8 @@
     <i class="bi bi-arrow-up-short"></i>
   </a> 
 
+
+
   <!-- Preloader -->
  <div id="preloader"></div> 
 
@@ -561,6 +534,8 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/js/main.js"></script>
+  <!-- Mobile Navigation JS -->
+  <script src="assets/js/mobile-nav.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- <script defer>
@@ -570,7 +545,7 @@
         speed: 500, // ✅ قلل سرعة التحريك (أسرع وأكثر استجابة)
         autoplay: {
           delay: 4000, // ✅ قلل التأخير قليلاً لتحسين التفاعل
-          disableOnInteraction: false
+        disableOnInteraction: false
         },
         navigation: {
           nextEl: ".swiper-button-next",

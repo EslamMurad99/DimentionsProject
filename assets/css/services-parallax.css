@@ -1,0 +1,1232 @@
+/* Services Page Parallax Effect Styles */
+body {
+	background: #fff;
+	font-family: "Comfortaa", sans-serif;
+	position: relative;
+	overflow-x: hidden;
+}
+
+/* Header adjustments for parallax */
+.header {
+	z-index: 9999 !important;
+	background: rgba(61, 77, 106, 0.9) !important;
+	backdrop-filter: blur(10px);
+	position: fixed !important;
+	top: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	display: flex !important;
+	align-items: center !important;
+	padding: 2px 0 !important;
+}
+
+/* Ensure navigation menu is properly layered */
+.header .navmenu {
+	z-index: 10000 !important;
+	position: relative !important;
+}
+
+.header .navmenu ul {
+	z-index: 10000 !important;
+	position: relative !important;
+}
+
+.header .navmenu li {
+	z-index: 10000 !important;
+	position: relative !important;
+}
+
+.header .navmenu a {
+	z-index: 10000 !important;
+	position: relative !important;
+}
+
+/* Ensure logo is visible on services page */
+.header .logo {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: flex-start !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+	height: 100% !important;
+	width: auto !important;
+	position: relative !important;
+	transform: none !important;
+}
+
+.header .logo img {
+	max-height: 120px !important;
+	width: auto !important;
+	height: 120px !important;
+	border-radius: 0 !important;
+	margin-right: 0 !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+	object-fit: contain !important;
+	transform: none !important;
+	position: relative !important;
+}
+
+.header .logo h1 {
+	visibility: visible !important;
+	opacity: 1 !important;
+	color: #fff !important;
+}
+
+/* Mobile responsive logo styles for services page */
+@media (max-width: 768px) {
+	.header .logo img {
+		max-height: 90px !important;
+		width: auto !important;
+		height: 90px !important;
+		margin-right: 0 !important;
+	}
+	
+	.header .logo h1 {
+		font-size: 24px !important;
+		letter-spacing: 1px !important;
+	}
+}
+
+@media (max-width: 576px) {
+	.header .logo img {
+		max-height: 80px !important;
+		width: auto !important;
+		height: 80px !important;
+		margin-right: 0 !important;
+	}
+	
+	.header .logo h1 {
+		font-size: 20px !important;
+		letter-spacing: 0.5px !important;
+	}
+}
+
+@media (max-width: 480px) {
+	.header .logo img {
+		max-height: 70px !important;
+		width: auto !important;
+		height: 70px !important;
+		margin-right: 0 !important;
+	}
+	
+	.header .logo h1 {
+		font-size: 18px !important;
+		letter-spacing: 0.3px !important;
+	}
+	
+	/* Ensure mobile navigation is properly layered */
+	.header .navmenu {
+		z-index: 10000 !important;
+	}
+	
+	.header .mobile-nav-toggle {
+		z-index: 10001 !important;
+		position: relative !important;
+	}
+}
+
+/* Footer styling */
+footer {
+	text-align: center;
+	padding: 1em;
+	max-width: 80px;
+	position: fixed;
+	top: 0;
+	right: 25px;
+	z-index: 9998;
+}
+
+footer a {
+	text-decoration: none;
+	display: inline-block;
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	background: transparent;
+	border: 1px dashed #fff;
+	color: #fff;
+	margin: 5px;
+	transition: all 0.3s ease;
+}
+
+footer a:hover {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+footer a .icons {
+	margin-top: 12px;
+	display: inline-block;
+	font-size: 20px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.main-content {
+	text-align: center;
+	text-transform: uppercase;
+	scroll-snap-type: y mandatory;
+	position: relative;
+	height: 100vh;
+	overflow-y: scroll;
+	padding-top: 80px; /* Account for fixed header */
+}
+
+.hover,
+.word,
+h1 {
+	cursor: pointer;
+	position: relative;
+	z-index: 10;
+}
+
+h1 {
+	position: relative;
+	color: #fff;
+	font: 900 60px Montserrat;
+	text-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Service points styling */
+.service-points {
+	position: absolute;
+	bottom: 20%;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	color: #fff;
+	z-index: 3;
+	opacity: 1;
+	transition: opacity 0.5s ease;
+}
+
+.service-points h3 {
+	font-size: 24px;
+	margin-bottom: 15px;
+	font-weight: 600;
+	text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.service-points ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.service-points li {
+	font-size: 16px;
+	margin: 12px 0;
+	text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+	opacity: 0.9;
+	line-height: 1.4;
+	letter-spacing: 0.5px;
+}
+
+.concept {
+	position: relative;
+	padding: 5em;
+	height: 100vh;
+	overflow: hidden;
+	scroll-snap-align: center;
+	pointer-events: auto;
+}
+
+.concept:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: radial-gradient(rgba(0, 0, 0, 0.3), transparent);
+	opacity: 0;
+	transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.concept:hover:before {
+	opacity: 0.5;
+}
+
+.concept-one {
+	display: grid;
+	grid: repeat(3, 1fr)/ repeat(3, 1fr);
+	background: url('../img/projects/IMG-20250717-WA0053_image_repair_1752928851354.jpg') center center/cover no-repeat;
+	padding: 8em;
+	position: relative;
+	transition: background-image 1s ease-in-out;
+}
+
+.concept-one::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: inherit;
+	filter: blur(3px);
+	z-index: 0;
+	pointer-events: none;
+}
+
+.concept-one::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+	pointer-events: none;
+}
+
+.concept-one h1 {
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 50%;
+	margin-top: -30px;
+	transition: 0.5s ease;
+	z-index: 2;
+	letter-spacing: 25px;
+}
+
+.concept-one .hover {
+	z-index: 3;
+}
+
+.concept-one .hover-1:hover ~ h1 {
+	left: 30px;
+	margin-top: -10px;
+}
+
+.concept-one .hover-2:hover ~ h1 {
+	margin-top: -10px;
+}
+
+.concept-one .hover-3:hover ~ h1 {
+	right: 30px;
+	margin-top: -10px;
+}
+
+.concept-one .hover-4:hover ~ h1 {
+	left: 30px;
+}
+
+.concept-one .hover-6:hover ~ h1 {
+	right: 30px;
+}
+
+.concept-one .hover-7:hover ~ h1 {
+	left: 30px;
+	margin-top: -50px;
+}
+
+.concept-one .hover-8:hover ~ h1 {
+	margin-top: -50px;
+}
+
+.concept-one .hover-9:hover ~ h1 {
+	right: 30px;
+	margin-top: -50px;
+}
+
+.concept-two {
+	display: grid;
+	grid: 100% / repeat(6, 1fr);
+	padding: 5em 15em;
+	background: url('../img/projects/IMG-20250717-WA0054_image_repair_1752928741684.jpg') center center/cover no-repeat;
+	position: relative;
+	transition: background-image 1s ease-in-out;
+}
+
+.concept-two::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: inherit;
+	filter: blur(3px);
+	z-index: 0;
+	pointer-events: none;
+}
+
+.concept-two::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+	pointer-events: none;
+}
+
+.concept-two .hover {
+	position: relative;
+	display: grid;
+	place-items: center;
+	z-index: 2;
+}
+
+.concept-two h1 {
+	color: transparent;
+	text-align: 0 1px 1px;
+	-webkit-text-stroke: 2px #fff;
+	text-shadow: none;
+	transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.concept-two .hover:hover h1 {
+	transform: scale(1.5);
+	color: #fff;
+	-webkit-text-stroke: 2px transparent;
+	text-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.concept-three {
+	padding: 5em;
+	background: url('../img/projects/IMG-20250717-WA0055_image_repair_1752928896029.jpg') center center/cover no-repeat;
+	position: relative;
+	transition: background-image 1s ease-in-out;
+}
+
+.concept-three::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: inherit;
+	filter: blur(3px);
+	z-index: 0;
+	pointer-events: none;
+}
+
+.concept-three::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+	pointer-events: none;
+}
+
+.concept-three .word {
+	display: flex;
+	align-items: center;
+	max-width: 500px;
+	margin: auto;
+	z-index: 2;
+}
+
+.concept-three .hover {
+	flex: 1;
+	display: grid;
+	height: calc(100vh - 10em);
+	grid: repeat(2, 2fr) / 100%;
+	position: relative;
+}
+
+.concept-three .hover div {
+	position: relative;
+	z-index: 5;
+}
+
+.concept-three .hover div:nth-child(1):hover ~ h1 {
+	margin-top: -10px;
+}
+
+.concept-three .hover div:nth-child(2):hover ~ h1 {
+	margin-top: -50px;
+}
+
+.concept-three h1 {
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 50%;
+	margin-top: -30px;
+	transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+	z-index: 2;
+}
+
+.concept-four {
+	height: 100vh;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	letter-spacing: 2em;
+	background: url('../img/projects/IMG-20250717-WA0056_image_repair_1752928931064.jpg') center center/cover no-repeat;
+	overflow: hidden;
+	transition: background-image 1s ease-in-out;
+}
+
+.concept-four::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: inherit;
+	filter: blur(3px);
+	z-index: 0;
+	pointer-events: none;
+}
+
+.concept-four::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+	pointer-events: none;
+}
+
+.concept-four h1 {
+	display: inline-block;
+	z-index: 2;
+}
+
+.concept-four:hover h1 {
+	letter-spacing: 25px;
+	transform: scale(1.3);
+	transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Mobile responsive hover effects for concept-four */
+@media (max-width: 768px) {
+	.concept-four:hover h1 {
+		letter-spacing: 15px;
+		transform: scale(1.1);
+	}
+}
+
+@media (max-width: 576px) {
+	.concept-four:hover h1 {
+		letter-spacing: 10px;
+		transform: scale(1.05);
+	}
+}
+
+@media (max-width: 480px) {
+	.concept-four:hover h1 {
+		letter-spacing: 5px;
+		transform: scale(1.02);
+	}
+}
+
+.concept-five {
+	background: url('../img/projects/IMG-20250717-WA0057_image_repair_1752928966241.jpg') center center/cover no-repeat;
+	display: flex;
+	align-items: center;
+	position: relative;
+	transition: background-image 1s ease-in-out;
+}
+
+.concept-five::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: inherit;
+	filter: blur(3px);
+	z-index: 0;
+	pointer-events: none;
+}
+
+.concept-five::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+	pointer-events: none;
+}
+
+.concept-five .word {
+	width: 600px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 80%;
+	z-index: 2;
+}
+
+.concept-five .word:hover .char:nth-child(even) {
+	top: 20px;
+}
+
+.concept-five .word:hover .char:nth-child(odd) {
+	top: -20px;
+}
+
+.concept-five .char {
+	flex: 1;
+	position: relative;
+	display: inline-block;
+	top: 0;
+	transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.concept-six {
+	display: flex;
+	align-items: center;
+	background: url('../img/projects/IMG-20250717-WA0058_image_repair_1752928998433.jpg') center center/cover no-repeat;
+	position: relative;
+	transition: background-image 1s ease-in-out;
+}
+
+.concept-six::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: inherit;
+	filter: blur(3px);
+	z-index: 0;
+	pointer-events: none;
+}
+
+.concept-six::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+	pointer-events: none;
+}
+
+.concept-six .word {
+	width: 550px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 80%;
+	z-index: 2;
+}
+
+.concept-six .word:hover .char:nth-child(1) {
+	margin-top: -30px;
+	transform: rotate(-20deg);
+}
+
+.concept-six .word:hover .char:nth-child(2) {
+	margin: -40px 0px 0 10px;
+	transform: rotate(5deg);
+}
+
+.concept-six .word:hover .char:nth-child(3) {
+	margin: 15px 0 0 10px;
+	transform: rotate(12deg);
+}
+
+.concept-six .word:hover .char:nth-child(4) {
+	margin: -25px 0 0;
+	transform: rotate(5deg);
+}
+
+.concept-six .word:hover .char:nth-child(5) {
+	margin: -40px 5px 0;
+	transform: rotate(-10deg);
+}
+
+.concept-six .char {
+	flex: 1;
+	transition: 0.3s ease-in-out;
+	position: relative;
+}
+
+.concept-seven {
+	background: url('../img/projects/snapedit_1752931408497.jpeg') center center/cover no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	transition: background-image 1s ease-in-out;
+}
+
+.concept-seven::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: inherit;
+	filter: blur(3px);
+	z-index: 0;
+	pointer-events: none;
+}
+
+.concept-seven::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+	pointer-events: none;
+}
+
+.concept-seven h1 {
+	letter-spacing: 35px;
+	position: relative;
+	color: #333;
+	z-index: 2;
+}
+
+.concept-seven h1:before {
+	content: "services";
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	max-width: 400px;
+	color: transparent;
+	letter-spacing: 10px;
+	text-shadow: none;
+}
+
+.concept-seven:hover h1:before {
+	transition: 0.6s ease;
+	color: rgba(51, 51, 51, 0.8);
+	animation: jump-out 0.6s ease forwards;
+}
+
+@keyframes jump-out {
+	0% {
+		opacity: 0;
+		transform: scale(1);
+	}
+	20% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: scale(2);
+	}
+}
+
+.concept-eight {
+	background: url('../img/projects/WhatsApp Image 2025-07-19 at 3.24.19 PM.png') center center/cover no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	transition: background-image 1s ease-in-out;
+}
+
+.concept-eight::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: inherit;
+	filter: blur(3px);
+	z-index: 0;
+	pointer-events: none;
+}
+
+.concept-eight::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+	pointer-events: none;
+}
+
+.concept-eight .word {
+	display: flex;
+	align-items: center;
+	justify-items: center;
+	width: 450px;
+	height: 80%;
+	z-index: 2;
+}
+
+.concept-eight .word:hover .char:before {
+	transition: 0.6s ease;
+	color: rgba(255, 255, 255, 0.8);
+	animation: falls 1s ease forwards;
+}
+
+.concept-eight .word:hover .char:nth-child(1):before {
+	animation: falls 0.9s ease 0.2s forwards;
+}
+
+.concept-eight .word:hover .char:nth-child(2n + 3):before {
+	animation: falls 1s ease 0.3s forwards;
+}
+
+.concept-eight .char {
+	flex: 1;
+	position: relative;
+}
+
+.concept-eight .char:before {
+	content: attr(data-content);
+	position: absolute;
+	top: 0;
+	color: transparent;
+	text-shadow: none;
+}
+
+@keyframes falls {
+	0% {
+		opacity: 0;
+		top: 0;
+	}
+	20% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		top: 100px;
+	}
+}
+
+/* Hide scrollbar for webkit browsers */
+.main-content::-webkit-scrollbar {
+	display: none;
+}
+
+.main-content {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	h1 {
+		font-size: 40px;
+	}
+	
+	.concept {
+		padding: 3em;
+	}
+	
+	.concept-four {
+		padding: 2em 1em;
+		overflow: hidden;
+		letter-spacing: 1em;
+	}
+	
+	.concept-two {
+		padding: 3em 2em;
+		grid: 100% / repeat(6, 1fr);
+	}
+	
+	.concept-two h1 {
+		font-size: 30px;
+		-webkit-text-stroke: 1.5px #fff;
+	}
+	
+	.concept-three .word {
+		max-width: 300px;
+	}
+	
+	.concept-five .word,
+	.concept-six .word {
+		width: 400px;
+	}
+	
+	.concept-eight .word {
+		width: 300px;
+	}
+	
+	footer {
+		right: 15px;
+	}
+	
+	footer a {
+		width: 40px;
+		height: 40px;
+	}
+	
+	.service-points {
+		bottom: 15%;
+	}
+	
+	.service-points h3 {
+		font-size: 20px;
+	}
+	
+	.service-points li {
+		font-size: 14px;
+		margin: 10px 0;
+	}
+	
+	/* Fix for long words on mobile */
+	.concept-four h1 {
+		font-size: 35px;
+		letter-spacing: 0.8em;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+		max-width: 100%;
+		white-space: nowrap;
+	}
+	
+	.concept-seven h1 {
+		font-size: 35px;
+		letter-spacing: 20px;
+	}
+	
+	.concept-seven h1:before {
+		letter-spacing: 5px;
+	}
+}
+
+@media (max-width: 576px) {
+	h1 {
+		font-size: 30px;
+	}
+	
+	.concept {
+		padding: 2em;
+	}
+	
+	.concept-four {
+		padding: 1.5em 0.5em;
+		overflow: hidden;
+		letter-spacing: 0.6em;
+	}
+	
+	.concept-two {
+		padding: 2em 1em;
+		grid: 100% / repeat(6, 1fr);
+	}
+	
+	.concept-two h1 {
+		font-size: 24px;
+		-webkit-text-stroke: 1px #fff;
+	}
+	
+	.concept-three .word {
+		max-width: 250px;
+	}
+	
+	.concept-five .word,
+	.concept-six .word {
+		width: 300px;
+	}
+	
+	.concept-eight .word {
+		width: 250px;
+	}
+	
+	footer {
+		right: 10px;
+	}
+	
+	footer a {
+		width: 35px;
+		height: 35px;
+		margin: 3px;
+	}
+	
+	footer a .icons {
+		font-size: 16px;
+		margin-top: 8px;
+	}
+	
+	.service-points {
+		bottom: 10%;
+	}
+	
+	.service-points h3 {
+		font-size: 18px;
+	}
+	
+	.service-points li {
+		font-size: 12px;
+		margin: 8px 0;
+	}
+	
+	/* Fix for long words on small mobile */
+	.concept-four h1 {
+		font-size: 28px;
+		letter-spacing: 0.4em;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+		max-width: 100%;
+		padding: 0 10px;
+		white-space: nowrap;
+	}
+	
+	.concept-seven h1 {
+		font-size: 28px;
+		letter-spacing: 15px;
+	}
+	
+	.concept-seven h1:before {
+		letter-spacing: 3px;
+	}
+}
+
+@media (max-width: 480px) {
+	h1 {
+		font-size: 24px;
+	}
+	
+	.concept {
+		padding: 1.5em;
+	}
+	
+	.concept-four {
+		padding: 1em 0.25em;
+		overflow: hidden;
+		letter-spacing: 0.4em;
+	}
+	
+	.concept-two {
+		padding: 1.5em 0.5em;
+		grid: 100% / repeat(6, 1fr);
+	}
+	
+	.concept-two h1 {
+		font-size: 20px;
+		-webkit-text-stroke: 0.8px #fff;
+	}
+	
+	/* Fix for very long words on small screens */
+	.concept-four h1 {
+		font-size: 20px;
+		letter-spacing: 0.2em;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+		max-width: 100%;
+		padding: 0 15px;
+		text-align: center;
+		white-space: nowrap;
+	}
+	
+	.concept-seven h1 {
+		font-size: 22px;
+		letter-spacing: 10px;
+	}
+	
+	.concept-seven h1:before {
+		letter-spacing: 2px;
+	}
+	
+	.service-points {
+		bottom: 8%;
+	}
+	
+	.service-points h3 {
+		font-size: 16px;
+	}
+	
+	.service-points li {
+		font-size: 11px;
+		margin: 6px 0;
+	}
+}
+
+/* Clickable Contact Section Styles */
+.contact-link {
+	transition: all 0.3s ease;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+}
+
+.contact-link:hover {
+	transform: scale(1.02);
+}
+
+.contact-link::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+	transition: left 0.6s ease;
+	z-index: 1;
+}
+
+.contact-link:hover::before {
+	left: 100%;
+}
+
+.contact-link h1,
+.contact-link .service-points {
+	position: relative;
+	z-index: 2;
+}
+
+.contact-link .service-points h3 {
+	position: relative;
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+
+.contact-link .service-points h3::after {
+	content: '→';
+	opacity: 0;
+	transition: all 0.3s ease;
+	font-weight: bold;
+	color: #47b2e4;
+	font-size: 1.2em;
+	transform: translateX(-10px);
+}
+
+.contact-link:hover .service-points h3::after {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+/* Add a subtle glow effect on hover */
+.contact-link:hover .word .char {
+	text-shadow: 0 0 20px rgba(71, 178, 228, 0.6);
+}
+
+
+
+
+
+/* Ensure the link doesn't interfere with existing animations */
+.contact-link .word,
+.contact-link .char {
+	pointer-events: none;
+}
+
+.contact-link .service-points {
+	pointer-events: none;
+}
+
+/* Add a floating animation to make it more noticeable */
+.contact-link {
+	animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+	0%, 100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-5px);
+	}
+}
+
+.contact-link:hover {
+	animation: none;
+	transform: scale(1.02);
+}
+
+/* Click indicator styles */
+.click-indicator {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	margin-top: 20px;
+	opacity: 1;
+	transform: translateY(0);
+	transition: all 0.4s ease;
+	position: relative;
+	z-index: 3;
+}
+
+.click-text {
+	color: #47b2e4;
+	font-weight: 600;
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.click-arrow {
+	color: #47b2e4;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+/* Responsive styles for contact link */
+@media (max-width: 768px) {
+	.contact-link:hover {
+		transform: scale(1.01);
+	}
+	
+	.contact-link .service-points h3::after {
+		font-size: 14px;
+	}
+	
+	.click-indicator {
+		margin-top: 15px;
+	}
+	
+	.click-text {
+		font-size: 12px;
+	}
+	
+	.click-arrow {
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 576px) {
+	.contact-link:hover {
+		transform: scale(1.005);
+	}
+	
+	.contact-link .service-points h3::after {
+		font-size: 12px;
+	}
+	
+	.click-indicator {
+		margin-top: 10px;
+	}
+	
+	.click-text {
+		font-size: 10px;
+		letter-spacing: 0.5px;
+	}
+	
+	.click-arrow {
+		font-size: 14px;
+	}
+} 

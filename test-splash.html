@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Splash Screen Test</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+    }
+    
+    .intro {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      width: 100%;
+      height: 100vh;
+      background-color: #d9d9d9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: top 1s ease-in-out;
+    }
+
+    .logo-header {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo {
+      position: relative;
+      display: inline-block;
+      width: 300px;
+      height: auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease-in, transform 0.7s ease-in;
+    }
+
+    .logo-active {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    .logo-fade {
+      opacity: 0 !important;
+      transform: translateY(-20px) !important;
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out !important;
+    }
+
+    .content {
+      padding: 50px;
+      text-align: center;
+    }
+
+    .test-button {
+      background: #47b2e4;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 10px;
+    }
+
+    .test-button:hover {
+      background: #37517e;
+    }
+  </style>
+</head>
+<body class="index-page">
+  <!-- Splash Screen -->
+  <div class="intro">
+    <h1 class="logo-header">
+      <img src="assets/img/DimensionsLogo.png" alt="Dimensions Logo" class="logo">
+    </h1>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h1>Splash Screen Test Page</h1>
+    <p>This page tests the splash screen functionality.</p>
+    
+    <button class="test-button" onclick="resetSplashScreen(); location.reload();">
+      Reset Splash Screen
+    </button>
+    
+    <button class="test-button" onclick="clearStorage(); location.reload();">
+      Clear All Storage
+    </button>
+    
+    <button class="test-button" onclick="showStorageInfo();">
+      Show Storage Info
+    </button>
+    
+    <button class="test-button" onclick="simulateInternalNav();">
+      Simulate Internal Navigation
+    </button>
+  </div>
+
+  <script>
+    // Test function to reset splash screen
+    window.resetSplashScreen = function() {
+      sessionStorage.removeItem('internal-navigation');
+      console.log('Splash screen reset. Refresh the page to see it again.');
+    };
+
+    // Clear all storage
+    window.clearStorage = function() {
+      localStorage.clear();
+      sessionStorage.clear();
+      console.log('All storage cleared.');
+    };
+
+    // Show storage info
+    window.showStorageInfo = function() {
+      console.log('Storage info:', {
+        'internal-navigation': sessionStorage.getItem('internal-navigation'),
+        'all sessionStorage keys': Object.keys(sessionStorage),
+        'all localStorage keys': Object.keys(localStorage)
+      });
+    };
+
+    // Simulate internal navigation
+    window.simulateInternalNav = function() {
+      sessionStorage.setItem('internal-navigation', 'true');
+      console.log('Internal navigation simulated. Refresh to see splash screen hidden.');
+    };
+
+    // Splash screen logic
+    window.addEventListener('DOMContentLoaded', () => {
+      console.log('DOMContentLoaded fired');
+      
+      const intro = document.querySelector('.intro');
+      const logo = document.querySelector('.intro .logo');
+
+      console.log('intro:', intro);
+      console.log('logo:', logo);
+
+      if (!intro || !logo) {
+        console.log('Splash screen elements not found');
+        return;
+      }
+
+      // Check if this is an external visit (not from internal navigation)
+      const isExternalVisit = !sessionStorage.getItem('internal-navigation');
+      const referrer = document.referrer;
+      const isFromSameDomain = referrer && (referrer.includes(window.location.hostname) || referrer.includes('localhost'));
+      
+      console.log('Navigation info:', {
+        isExternalVisit,
+        referrer,
+        isFromSameDomain,
+        sessionStorage: sessionStorage.getItem('internal-navigation')
+      });
+
+      // Don't show splash screen if navigating internally
+      if (!isExternalVisit || isFromSameDomain) {
+        console.log('Internal navigation detected, hiding splash screen');
+        intro.style.display = 'none';
+        return;
+      }
+
+      console.log('External visit detected, showing splash screen...');
+
+      // Ensure the intro is visible and properly positioned
+      intro.style.display = 'flex';
+      intro.style.top = '0';
+      intro.style.zIndex = '9999';
+      
+      // Ensure logo starts in correct state
+      logo.style.opacity = '0';
+      logo.style.transform = 'translateY(20px)';
+      logo.classList.remove('logo-active', 'logo-fade');
+
+      console.log('Initial logo state:', {
+        opacity: logo.style.opacity,
+        transform: logo.style.transform,
+        classes: logo.className
+      });
+
+      // Start the animation sequence
+      setTimeout(() => {
+        console.log('Adding logo-active class...');
+        logo.classList.add('logo-active');
+        console.log('Logo classes after adding:', logo.className);
+      }, 100);
+
+      // Fade out the logo
+      setTimeout(() => {
+        console.log('Adding logo-fade class...');
+        logo.classList.remove('logo-active');
+        logo.classList.add('logo-fade');
+        console.log('Logo classes after fade:', logo.className);
+      }, 3000);
+
+      // Hide the splash screen
+      setTimeout(() => {
+        console.log('Moving intro up...');
+        intro.style.top = '-100vh';
+        
+        setTimeout(() => {
+          intro.style.display = 'none';
+          console.log('Splash screen completely hidden');
+        }, 1000);
+      }, 3500);
+    });
+
+    // Track internal navigation for test page
+    document.addEventListener('DOMContentLoaded', () => {
+      const navLinks = document.querySelectorAll('a[href]');
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href');
+          
+          if (href && (href.startsWith('#') || 
+                       href.startsWith('./') || 
+                       href.startsWith('/') || 
+                       href.includes(window.location.hostname) ||
+                       href.endsWith('.html'))) {
+            console.log('Test page internal navigation detected:', href);
+            sessionStorage.setItem('internal-navigation', 'true');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html> 
