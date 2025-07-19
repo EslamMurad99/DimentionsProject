@@ -936,29 +936,6 @@ section,
   100% { background-position: 0% 50%; }
 }
 
-/*--------------------------------------------------------------
-# Clients Section
---------------------------------------------------------------*/
-.clients {
-  padding: 12px 0;
-}
-
-.clients .swiper {
-  padding: 10px 0;
-}
-
-.clients .swiper-wrapper {
-  height: auto;
-}
-
-.clients .swiper-slide img {
-  transition: 0.3s;
-  padding: 0 10px;
-}
-
-.clients .swiper-slide img:hover {
-  transform: scale(1.1);
-}
 
 /*--------------------------------------------------------------
 # About Section (Optimized)
@@ -1321,4 +1298,169 @@ section,
 
 .contact .php-email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 25%);
+}
+/* --------------------------------------------------------
+# Clients Section
+--------------------------------------------------------------*/ */
+/* Clients Navigation Buttons - Side Positioned */
+.clients {
+  padding: 12px 0;
+  background-color: #fff;
+  position: relative; /* Add this for absolute positioning of buttons */
+}
+
+.clients .swiper {
+  padding: 10px 0;
+}
+
+.clients .swiper-wrapper {
+  height: auto;
+}
+
+.clients .swiper-slide img {
+  transition: 0.3s;
+  padding: 0 10px;
+}
+
+.clients .swiper-slide img:hover {
+  transform: scale(1.5);
+}
+
+/* Side Navigation Buttons - Larger and Taller */
+.clients-prev,
+.clients-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 80px;
+  border: none;
+  background: transparent;
+  color: #374f7e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 48px;
+  font-weight: bold;
+  padding: 0;
+  z-index: 10;
+}
+
+.clients-prev {
+  left: -40px;
+}
+
+.clients-next {
+  right: -40px;
+}
+
+.clients-prev:hover,
+.clients-next:hover {
+  color: #2a3f5f;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.clients-prev:active,
+.clients-next:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .clients-prev,
+  .clients-next {
+    width: 65px;
+    height: 65px;
+    font-size: 36px;
+  }
+  
+  .clients-prev {
+    left: -30px;
+  }
+  
+  .clients-next {
+    right: -30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .clients-prev,
+  .clients-next {
+    width: 55px;
+    height: 55px;
+    font-size: 30px;
+  }
+  
+  .clients-prev {
+    left: -25px;
+  }
+  
+  .clients-next {
+    right: -25px;
+}
+}
+
+/*--------------------------------------------------------------
+# Splash Screen
+--------------------------------------------------------------*/
+.intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100vh;
+  background-color: #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: top 1s ease-in-out;
+}
+
+.logo-header {
+  text-align: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  position: relative;
+  display: inline-block;
+  width: 750px;
+  height: auto;
+  opacity: 0;
+}
+
+.logo-active {
+  bottom: 0;
+  opacity: 1;
+  transition: ease-in 0.7s;
+}
+
+.logo-fade {
+  bottom: 150px;
+  opacity: 0;
+  transition:  ease-in-out 0.5s;
+}
+
+/* Responsive logo sizing */
+@media (max-width: 768px) {
+  .logo {
+    width: 280px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 300px !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .logo {
+    width: 220px !important;
+  }
 }

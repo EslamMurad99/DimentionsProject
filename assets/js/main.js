@@ -11,6 +11,45 @@
   const skillsAnimations = document.querySelectorAll('.skills-animation');
   const isotopeLayouts = document.querySelectorAll('.isotope-layout');
 
+
+window.addEventListener('DOMContentLoaded', () => {
+  console.log('DOMContentLoaded fired');
+  
+  const intro = document.querySelector('.intro');
+  const logo = document.querySelector('.intro .logo');
+
+  console.log('intro:', intro);
+  console.log('logo:', logo);
+
+  if (!intro || !logo) {
+    console.error('Required elements not found');
+    return;
+  }
+
+  console.log('All elements found, starting animation...');
+
+  // Start the animation sequence
+  setTimeout(() => {
+    console.log('Adding logo-active class...');
+    logo.classList.add('logo-active');
+    console.log('Logo classes after adding:', logo.className);
+  }, 500);
+
+  // Fade out the logo
+  setTimeout(() => {
+    console.log('Adding logo-fade class...');
+    logo.classList.remove('logo-active');
+    logo.classList.add('logo-fade');
+  }, 2500);
+
+  // Hide the splash screen
+  setTimeout(() => {
+    console.log('Moving intro up...');
+    intro.style.top = '-100vh';
+  }, 2800);
+});
+
+
   function toggleScrolled() {
     if (!header.classList.contains('scroll-up-sticky') &&
         !header.classList.contains('sticky-top') &&
@@ -51,6 +90,56 @@
     });
   }
 
+  function initClientsSwiper() {
+    const clientsSwiperElement = document.querySelector('.init-swiper');
+    if (!clientsSwiperElement) return;
+
+    // Destroy existing Swiper instance if it exists
+    if (clientsSwiperElement.swiper) {
+      clientsSwiperElement.swiper.destroy(true, true);
+    }
+
+    // Initialize new Swiper with navigation
+    const clientsSwiper = new Swiper(clientsSwiperElement, {
+      loop: true,
+      speed: 600,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      },
+      slidesPerView: 'auto',
+      navigation: {
+        nextEl: '.clients-next',
+        prevEl: '.clients-prev',
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 40
+        },
+        480: {
+          slidesPerView: 3,
+          spaceBetween: 60
+        },
+        640: {
+          slidesPerView: 4,
+          spaceBetween: 80
+        },
+        992: {
+          slidesPerView: 5,
+          spaceBetween: 120
+        },
+        1200: {
+          slidesPerView: 6,
+          spaceBetween: 120
+        }
+      }
+    });
+
+    // Store the Swiper instance for debugging
+    window.clientsSwiper = clientsSwiper;
+  }
+
   function aosInit() {
     AOS.init({
       duration: 600,
@@ -73,6 +162,7 @@
     navmenuScrollspy();
     aosInit();
     initSwiper();
+    initClientsSwiper();
     if (document.querySelector('#preloader')) {
       document.querySelector('#preloader').remove();
     }
@@ -160,3 +250,65 @@
   }
 
 })();
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize clients swiper with navigation
+  const clientsSwiper = new Swiper('.init-swiper', {
+    loop: true,
+    speed: 600,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    slidesPerView: 'auto',
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    navigation: {
+      nextEl: '.clients-next',
+      prevEl: '.clients-prev',
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 40
+      },
+      480: {
+        slidesPerView: 3,
+        spaceBetween: 60
+      },
+      640: {
+        slidesPerView: 4,
+        spaceBetween: 80
+      },
+      992: {
+        slidesPerView: 5,
+        spaceBetween: 120
+      },
+      1200: {
+        slidesPerView: 6,
+        spaceBetween: 120
+      }
+    }
+  });
+});
+
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach((entry) => {
+  console.log(entry)
+  if (entry.isIntersecting){
+    entry.target.classList.add('show');
+  }
+  else{
+    entry.target.classList.remove('show')
+  }
+})
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach(el => observer.observe(el));
+
+}
+);

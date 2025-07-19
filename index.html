@@ -37,6 +37,12 @@
 </head>
 
 <body class="index-page">
+  <!-- Splash screen should be here, before header -->
+  <div class="intro">
+    <h1 class="logo-header">
+  <img src="assets/img/DimensionsLogo.png" alt="Dimensions Logo" class="logo">
+    </h1>
+  </div>
 
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
@@ -62,6 +68,7 @@
   </header>
 
   <main class="main">
+
 
    <section id="hero" class="hero section">
       <div class="hero-bg-animation">
@@ -112,61 +119,36 @@
 
     <!-- Clients Section -->
     <section id="clients" class="clients section light-background">
-
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Our Clients</h2>
+      </div>
       <div class="container" data-aos="zoom-in">
+        <!-- Side positioned navigation buttons -->
+        <button class="clients-prev" type="button">‹</button>
+        <button class="clients-next" type="button">›</button>
 
         <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 2,
-                  "spaceBetween": 40
-                },
-                "480": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 60
-                },
-                "640": {
-                  "slidesPerView": 4,
-                  "spaceBetween": 80
-                },
-                "992": {
-                  "slidesPerView": 5,
-                  "spaceBetween": 120
-                },
-                "1200": {
-                  "slidesPerView": 6,
-                  "spaceBetween": 120
-                }
-              }
-            }
-          </script>
+          <!-- Remove the JSON config script -->
           <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/c1.jpeg" class="img-fluid" alt="client 1" loading="lazy"></div>
-            <div class="swiper-slide"><img src="assets/img/clients/c2.jpeg" class="img-fluid" alt="client 2" loading="lazy"></div>
-            <div class="swiper-slide"><img src="assets/img/clients/c7.jpeg" class="img-fluid" alt="client 3" loading="lazy"></div>
-            <div class="swiper-slide"><img src="assets/img/clients/c4.jpeg" class="img-fluid" alt="client 4" loading="lazy"></div>
-            <div class="swiper-slide"><img src="assets/img/clients/c5.jpeg" class="img-fluid" alt="client 5" loading="lazy"></div>
-            <div class="swiper-slide"><img src="assets/img/clients/c6.jpeg" class="img-fluid" alt="client 6" loading="lazy"></div>
-            <div class="swiper-slide"><img src="assets/img/clients/c7.jpeg" class="img-fluid" alt="client 7" loading="lazy"></div>
-            <div class="swiper-slide"><img src="assets/img/clients/c8.jpeg" class="img-fluid" alt="client 8" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/c1.png" class="img-fluid" alt="client 1" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/c2.png" class="img-fluid" alt="client 2" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/c7.png" class="img-fluid" alt="client 3" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/c4.png" class="img-fluid" alt="client 4" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/c5.png" class="img-fluid" alt="client 5" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/c6.png" class="img-fluid" alt="client 6" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/c7.png" class="img-fluid" alt="client 7" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/c8.png" class="img-fluid" alt="client 8" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/clients-1.webp" class="img-fluid" alt="client 8" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/clients-2.webp" class="img-fluid" alt="client 8" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/clients-3.webp" class="img-fluid" alt="client 8" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/clients-4.webp" class="img-fluid" alt="client 8" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/clients-5.webp" class="img-fluid" alt="client 8" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/clients-6.webp" class="img-fluid" alt="client 8" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/clients-7.webp" class="img-fluid" alt="client 8" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/clients-8.webp" class="img-fluid" alt="client 8" loading="lazy"></div>
           </div>
         </div>
-
       </div>
-
     </section><!-- /Clients Section -->
 
     <!-- About Us Section -->
@@ -581,7 +563,7 @@
   <script src="assets/js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script defer>
+  <!-- <script defer>
     document.addEventListener("DOMContentLoaded", function () {
       const swiper = new Swiper(".mySwiper", {
         loop: true,
@@ -602,7 +584,7 @@
         observeParents: true,
       });
     });
-  </script>
+  </script> -->
   <script>
     var swiper = new Swiper(".projectStatsSwiper", {
       slidesPerView: 3,
