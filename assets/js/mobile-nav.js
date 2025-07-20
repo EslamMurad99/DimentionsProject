@@ -54,7 +54,7 @@ class MobileNavigation {
             </a>
           </li>
           <li class="mobile-nav-item">
-            <a href="index.html#about" class="mobile-nav-link" data-page="about">
+            <a href="about.html" class="mobile-nav-link" data-page="about">
               <div class="mobile-nav-icon">
                 <i class="bi bi-info-circle"></i>
               </div>
@@ -315,6 +315,7 @@ class MobileNavigation {
     if (path.includes('services.html')) return 'services';
     if (path.includes('projects.html')) return 'projects';
     if (path.includes('contact.html')) return 'contact';
+    if (path.includes('about.html')) return 'about';
     if (hash.includes('about')) return 'about';
     if (path.includes('index.html') || path === '/' || path === '') return 'home';
     

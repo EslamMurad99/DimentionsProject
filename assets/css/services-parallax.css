@@ -202,6 +202,55 @@ h1 {
 	transition: opacity 0.5s ease;
 }
 
+/* Fix for screens with height around 800px to prevent overlap */
+@media (max-height: 900px) {
+	.service-points {
+		bottom: 15%;
+	}
+	
+	.service-points h3 {
+		font-size: 20px;
+		margin-bottom: 10px;
+	}
+	
+	.service-points li {
+		font-size: 14px;
+		margin: 8px 0;
+	}
+}
+
+@media (max-height: 800px) {
+	.service-points {
+		bottom: 12%;
+	}
+	
+	.service-points h3 {
+		font-size: 18px;
+		margin-bottom: 8px;
+	}
+	
+	.service-points li {
+		font-size: 13px;
+		margin: 6px 0;
+	}
+}
+
+@media (max-height: 700px) {
+	.service-points {
+		bottom: 8%;
+	}
+	
+	.service-points h3 {
+		font-size: 16px;
+		margin-bottom: 6px;
+	}
+	
+	.service-points li {
+		font-size: 12px;
+		margin: 4px 0;
+	}
+}
+
 .service-points h3 {
 	font-size: 24px;
 	margin-bottom: 15px;
@@ -293,6 +342,100 @@ h1 {
 	transition: 0.5s ease;
 	z-index: 2;
 	letter-spacing: 25px;
+}
+
+/* Ensure headings don't overlap with service-points on smaller screens */
+@media (max-height: 900px) {
+	.concept-one h1 {
+		margin-top: -40px;
+	}
+	
+	.concept-two h1 {
+		font-size: 40px;
+	}
+	
+	.concept-three h1 {
+		font-size: 40px;
+	}
+	
+	.concept-four h1 {
+		font-size: 40px;
+	}
+	
+	.concept-five .word,
+	.concept-six .word {
+		font-size: 40px;
+	}
+	
+	.concept-seven h1 {
+		font-size: 40px;
+	}
+	
+	.concept-eight .word {
+		font-size: 40px;
+	}
+}
+
+@media (max-height: 800px) {
+	.concept-one h1 {
+		margin-top: -50px;
+	}
+	
+	.concept-two h1 {
+		font-size: 35px;
+	}
+	
+	.concept-three h1 {
+		font-size: 35px;
+	}
+	
+	.concept-four h1 {
+		font-size: 35px;
+	}
+	
+	.concept-five .word,
+	.concept-six .word {
+		font-size: 35px;
+	}
+	
+	.concept-seven h1 {
+		font-size: 35px;
+	}
+	
+	.concept-eight .word {
+		font-size: 35px;
+	}
+}
+
+@media (max-height: 700px) {
+	.concept-one h1 {
+		margin-top: -60px;
+	}
+	
+	.concept-two h1 {
+		font-size: 30px;
+	}
+	
+	.concept-three h1 {
+		font-size: 30px;
+	}
+	
+	.concept-four h1 {
+		font-size: 30px;
+	}
+	
+	.concept-five .word,
+	.concept-six .word {
+		font-size: 30px;
+	}
+	
+	.concept-seven h1 {
+		font-size: 30px;
+	}
+	
+	.concept-eight .word {
+		font-size: 30px;
+	}
 }
 
 .concept-one .hover {
@@ -530,6 +673,43 @@ h1 {
 	.concept-four:hover h1 {
 		letter-spacing: 5px;
 		transform: scale(1.02);
+	}
+}
+
+/* Specific adjustments for concept-four to prevent overlap with service-points */
+@media (max-height: 900px) {
+	.concept-four h1 {
+		font-size: 40px;
+		letter-spacing: 15px;
+	}
+	
+	.concept-four:hover h1 {
+		letter-spacing: 20px;
+		transform: scale(1.2);
+	}
+}
+
+@media (max-height: 800px) {
+	.concept-four h1 {
+		font-size: 35px;
+		letter-spacing: 12px;
+	}
+	
+	.concept-four:hover h1 {
+		letter-spacing: 18px;
+		transform: scale(1.1);
+	}
+}
+
+@media (max-height: 700px) {
+	.concept-four h1 {
+		font-size: 30px;
+		letter-spacing: 10px;
+	}
+	
+	.concept-four:hover h1 {
+		letter-spacing: 15px;
+		transform: scale(1.05);
 	}
 }
 
@@ -882,16 +1062,17 @@ h1 {
 	}
 	
 	.service-points {
-		bottom: 15%;
+		bottom: 12%;
 	}
 	
 	.service-points h3 {
-		font-size: 20px;
+		font-size: 18px;
+		margin-bottom: 8px;
 	}
 	
 	.service-points li {
-		font-size: 14px;
-		margin: 10px 0;
+		font-size: 13px;
+		margin: 6px 0;
 	}
 	
 	/* Fix for long words on mobile */
@@ -968,16 +1149,17 @@ h1 {
 	}
 	
 	.service-points {
-		bottom: 10%;
+		bottom: 8%;
 	}
 	
 	.service-points h3 {
-		font-size: 18px;
+		font-size: 16px;
+		margin-bottom: 6px;
 	}
 	
 	.service-points li {
-		font-size: 12px;
-		margin: 8px 0;
+		font-size: 11px;
+		margin: 4px 0;
 	}
 	
 	/* Fix for long words on small mobile */
@@ -1048,16 +1230,17 @@ h1 {
 	}
 	
 	.service-points {
-		bottom: 8%;
+		bottom: 5%;
 	}
 	
 	.service-points h3 {
-		font-size: 16px;
+		font-size: 14px;
+		margin-bottom: 4px;
 	}
 	
 	.service-points li {
-		font-size: 11px;
-		margin: 6px 0;
+		font-size: 10px;
+		margin: 3px 0;
 	}
 }
 
