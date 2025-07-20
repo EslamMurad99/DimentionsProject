@@ -1,26 +1,71 @@
 /* Safari Mobile Viewport Fix */
 @supports (-webkit-touch-callout: none) {
   /* iOS Safari specific styles */
+  html {
+    /* Use dynamic viewport units for Safari */
+    height: 100vh;
+    height: -webkit-fill-available;
+  }
+  
   body {
     /* Prevent Safari from adding padding for the address bar */
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
     padding-top: env(safe-area-inset-top);
     padding-bottom: env(safe-area-inset-bottom);
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
+    /* Prevent Safari from adjusting viewport */
+    position: fixed;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
   }
   
   /* Fix for fixed header on Safari */
   .header {
     padding-top: env(safe-area-inset-top);
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: 997;
   }
   
   /* Ensure content doesn't get hidden behind Safari UI */
   .main-content {
     padding-top: calc(env(safe-area-inset-top) + 88px);
+    min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
   }
   
   /* Fix for mobile navigation */
   .mobile-nav-container {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    height: 100vh;
+    height: var(--vh, 1vh) * 100;
+    height: -webkit-fill-available;
+  }
+  
+  /* Fix for hero section */
+  .hero {
+    min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    min-height: calc(var(--vh, 1vh) * 100 - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    padding-top: calc(env(safe-area-inset-top) + 88px);
+  }
+  
+  /* Fix for sections */
+  section {
+    padding-top: calc(60px + env(safe-area-inset-top));
+    padding-bottom: calc(60px + env(safe-area-inset-bottom));
+  }
+  
+  /* Fix for splash screen */
+  .intro {
+    height: 100vh;
+    height: var(--vh, 1vh) * 100;
+    height: -webkit-fill-available;
     padding-top: env(safe-area-inset-top);
     padding-bottom: env(safe-area-inset-bottom);
   }
