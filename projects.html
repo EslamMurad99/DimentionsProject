@@ -65,6 +65,18 @@
   </section>
 
   <main class="main-content">
+    <!-- Scroll Guide Arrow -->
+    <div class="mobile-scroll-guide">
+      <div class="scroll-guide-content">
+        <div class="scroll-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="scroll-text">Scroll to explore</span>
+      </div>
+    </div>
+    
     <div class="external">
       <div class="horizontal-scroll-wrapper">
         <div class="img-wrapper slower">
@@ -252,9 +264,39 @@
         mirror: false
       });
       
+      // Mobile scroll guide functionality
+      const scrollGuide = document.querySelector('.mobile-scroll-guide');
+      const horizontalScrollWrapper = document.querySelector('.horizontal-scroll-wrapper');
+      
+      // Hide scroll guide after user starts scrolling
+      if (scrollGuide && horizontalScrollWrapper) {
+        let hasScrolled = false;
+        
+        horizontalScrollWrapper.addEventListener('scroll', function() {
+          if (!hasScrolled) {
+            hasScrolled = true;
+            scrollGuide.classList.add('hidden');
+            
+            // Remove the guide completely after animation
+            setTimeout(() => {
+              scrollGuide.style.display = 'none';
+            }, 500);
+          }
+        });
+        
+        // Hide guide after 5 seconds if user hasn't scrolled
+        setTimeout(() => {
+          if (!hasScrolled) {
+            scrollGuide.classList.add('hidden');
+            setTimeout(() => {
+              scrollGuide.style.display = 'none';
+            }, 500);
+          }
+        }, 5000);
+      }
+      
       // Scroll-triggered zoom animations for project images
       const imgWrappers = document.querySelectorAll('.img-wrapper');
-      const horizontalScrollWrapper = document.querySelector('.horizontal-scroll-wrapper');
       
       // Function to check if element is in viewport
       function isInViewport(element) {
