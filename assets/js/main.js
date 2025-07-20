@@ -12,58 +12,8 @@
   const isotopeLayouts = document.querySelectorAll('.isotope-layout');
 
 
-// Safari Mobile Viewport Fix
-function fixSafariViewport() {
-  // Check if it's Safari on iOS
-  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-  
-  if (isSafari && isIOS) {
-    console.log('Safari on iOS detected, applying viewport fixes');
-    
-    // Set viewport height for Safari
-    const setViewportHeight = () => {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-      
-      // Update body height
-      document.body.style.height = `${window.innerHeight}px`;
-      document.body.style.minHeight = `${window.innerHeight}px`;
-    };
-    
-    // Set initial height
-    setViewportHeight();
-    
-    // Update on resize and orientation change
-    window.addEventListener('resize', setViewportHeight);
-    window.addEventListener('orientationchange', () => {
-      setTimeout(setViewportHeight, 100);
-    });
-    
-    // Fix for Safari's 100vh issue
-    const fixSafariVH = () => {
-      const elements = document.querySelectorAll('.hero, .intro, .mobile-nav-container');
-      elements.forEach(element => {
-        if (element) {
-          element.style.height = `${window.innerHeight}px`;
-          element.style.minHeight = `${window.innerHeight}px`;
-        }
-      });
-    };
-    
-    fixSafariVH();
-    window.addEventListener('resize', fixSafariVH);
-    window.addEventListener('orientationchange', () => {
-      setTimeout(fixSafariVH, 100);
-    });
-  }
-}
-
 window.addEventListener('DOMContentLoaded', () => {
   console.log('DOMContentLoaded fired');
-  
-  // Apply Safari viewport fixes
-  fixSafariViewport();
   
   // Only show splash screen on home page
   const isHomePage = window.location.pathname === '/' || 

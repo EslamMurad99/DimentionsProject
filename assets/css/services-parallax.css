@@ -1413,3 +1413,70 @@ h1 {
 		font-size: 14px;
 	}
 } 
+
+/* Safari Mobile Dynamic Address Bar Fix */
+@supports (-webkit-touch-callout: none) {
+	/* Safari-specific styles */
+	body {
+		/* Prevent content from being hidden behind Safari's dynamic address bar */
+		padding-top: env(safe-area-inset-top);
+		padding-bottom: env(safe-area-inset-bottom);
+		padding-left: env(safe-area-inset-left);
+		padding-right: env(safe-area-inset-right);
+	}
+	
+	/* Adjust header for Safari safe area */
+	.header {
+		padding-top: calc(env(safe-area-inset-top) + 2px) !important;
+		padding-bottom: 2px !important;
+	}
+	
+	/* Adjust main content for Safari safe area */
+	.main-content {
+		padding-top: calc(80px + env(safe-area-inset-top)) !important;
+		min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom)) !important;
+	}
+	
+	/* Ensure concept sections account for safe area */
+	.concept {
+		min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom)) !important;
+		padding-top: env(safe-area-inset-top) !important;
+		padding-bottom: env(safe-area-inset-bottom) !important;
+	}
+	
+	/* Adjust service points positioning for Safari */
+	.service-points {
+		bottom: calc(20% + env(safe-area-inset-bottom)) !important;
+	}
+	
+	/* Mobile-specific Safari adjustments */
+	@media (max-width: 768px) {
+		.main-content {
+			padding-top: calc(90px + env(safe-area-inset-top)) !important;
+		}
+		
+		.header {
+			padding-top: calc(env(safe-area-inset-top) + 5px) !important;
+		}
+	}
+	
+	@media (max-width: 576px) {
+		.main-content {
+			padding-top: calc(80px + env(safe-area-inset-top)) !important;
+		}
+		
+		.service-points {
+			bottom: calc(15% + env(safe-area-inset-bottom)) !important;
+		}
+	}
+	
+	@media (max-width: 480px) {
+		.main-content {
+			padding-top: calc(70px + env(safe-area-inset-top)) !important;
+		}
+		
+		.service-points {
+			bottom: calc(10% + env(safe-area-inset-bottom)) !important;
+		}
+	}
+} 
