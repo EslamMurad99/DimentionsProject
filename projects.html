@@ -360,5 +360,35 @@
     });
   </script>
 
+  <!-- Enable horizontal scrolling on touch devices (Android fix) -->
+  <script>
+    // Enable horizontal scrolling on touch devices (Android fix)
+    document.addEventListener('DOMContentLoaded', function() {
+      var el = document.querySelector('.horizontal-scroll-wrapper');
+      if (!el) return;
+      let startX = 0;
+      let scrollLeft = 0;
+      let isDown = false;
+
+      el.addEventListener('touchstart', function(e) {
+        if (e.touches.length !== 1) return;
+        isDown = true;
+        startX = e.touches[0].pageY; // because wrapper is rotated
+        scrollLeft = el.scrollTop;
+      });
+
+      el.addEventListener('touchmove', function(e) {
+        if (!isDown || e.touches.length !== 1) return;
+        e.preventDefault();
+        const y = e.touches[0].pageY;
+        const walk = y - startX;
+        el.scrollTop = scrollLeft - walk;
+      }, { passive: false });
+
+      el.addEventListener('touchend', function() {
+        isDown = false;
+      });
+    });
+  </script>
 </body>
 </html> 
